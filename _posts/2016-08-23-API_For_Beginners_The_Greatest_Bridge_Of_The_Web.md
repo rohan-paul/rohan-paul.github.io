@@ -4,8 +4,8 @@ title: API For Beginners - The Greatest Bridge Of The Web
 comments: true
 author: Rohan Paul
 categories: Web development
-cover:  "assets/bridge-API.jpg"
 ---
+<img src="/images/fulls/bridge-API.jpg" class="fit image">
 
 Like me, ever wondered how the websites we visit "talk" to each other so seamlessly and what is that invisible bridge connecting them so beautifully ?
 

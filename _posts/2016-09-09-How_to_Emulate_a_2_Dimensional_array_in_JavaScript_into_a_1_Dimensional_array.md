@@ -4,8 +4,8 @@ title: The case for emulating a 2-Dimensional array (i.e. a matrix) in JavaScrip
 comments: true
 author: Rohan Paul
 categories: JavaScript
-cover:  "assets/Eloquent-Ch-7-2D-Array.jpg"
 ---
+<img src="/images/fulls/Eloquent-Ch-7-2D-Array.jpg" class="fit image">
 
 This quick post was motivated by the issue I faced while doing the project in Chapter-7 (Electronic Life) of the book [Eloquent Javascript](http://eloquentjavascript.net/07_elife.html).
 

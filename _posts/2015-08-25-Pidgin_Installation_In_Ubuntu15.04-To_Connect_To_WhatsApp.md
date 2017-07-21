@@ -4,8 +4,9 @@ title: How to connect to WhatsApp from desktop (Ubuntu 14.04/14.10/15.04) by ins
 comments: true
 author: Rohan Paul
 categories: Pidgin-WhatsApp
-cover:  "assets/terminal.jpg"
+
 ---
+<img src="/images/fulls/pidgin-whatsapp.jpg" class="fit image">
 
 **Pidgin** is an excellent graphical IM program that lets you sign on to WhatsApp, AIM, Jabber, MSN, Yahoo!, and other IM networks.
 

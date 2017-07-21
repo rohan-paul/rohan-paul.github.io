@@ -4,8 +4,8 @@ title: Understanding JavaScript Call Method
 comments: true
 author: Rohan Paul
 categories: JavaScript
-cover:  "assets/call-function.jpg"
 ---
+<img src="/images/fulls/call-function.jpg" class="fit image">
 
 One of the features of JavaScript is that functions are first-class objects here. This means that functions can be assigned to a variable and passed around. And if functions are objects and objects can have methods, then functions can have methods. The ``call`` is such a method of functions. Its used to borrow methods from other Objects and set ``this`` value explicitly.
 

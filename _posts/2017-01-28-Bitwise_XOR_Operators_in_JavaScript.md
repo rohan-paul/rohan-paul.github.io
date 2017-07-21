@@ -4,8 +4,8 @@ title: A very nice use of bitwise XOR Operators in JavaScript in solving a CodeW
 comments: true
 author: Rohan Paul
 categories: JavaScript
-cover:  "assets/call-function.jpg"
 ---
+<img src="/images/fulls/XOR-Operator.jpg" class="fit image">
 
 Writing this post about bitwise XOR operator while I was solving a challenge or "Kata" as they call each challenge at [CodeWars](https://www.codewars.com) (the great site for coding challanges and getting a global peer rank). Lets refer directly to the problem (the below gist) along with my solution, so we can see how beautifully and efficently the XOR operatior could solve the same.
 

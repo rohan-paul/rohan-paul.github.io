@@ -5,7 +5,7 @@ comments: true
 author: Rohan Paul
 categories: JavaScript
 ---
-<img src="/images/fulls/max-subarray.jpg" class="fit image">
+<img src="/images/fulls/Max-Subarray-Sum-Kadane.jpeg" class="fit image">
 
 The maximum subarray sum, a very famous and clssic Computer Science problem, that I just faced doing one of Leetcode challenges.
 
