@@ -10,6 +10,7 @@ layout: default
 
     <section>
       {{ content }}
+      <h2>{% include comments.html %}</h2>
     </section>
 
     <footer>
@@ -28,12 +29,13 @@ layout: default
             </ul>
           </footer>
         </article>
+
       {% endif %}
 
       {% if page.next %}
         <article class="{% cycle '6u', '6u$' %} 12u(small) excerpt f-right">
           <header>
-            <h2><a href="{{ page.next.url }}">{{ page.next.title }}</a></h2>
+            <h2><a href="{{ page.next.url }}">{{ page.next.title }}</a></h2>            
           </header>
           <section>
             {{ page.next.excerpt | markdownify }}

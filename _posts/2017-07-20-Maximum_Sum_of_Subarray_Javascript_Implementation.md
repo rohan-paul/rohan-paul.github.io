@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Maximum Sum of Subarray, a Javascript implementaion
+title: Maximum Sum of Subarray, a Javascript implementation
 comments: true
 author: Rohan Paul
 categories: JavaScript
@@ -25,7 +25,7 @@ The above is a special case of the general [**Max Subarray**](https://en.wikiped
 We will solve it under 3 different approaches with different time compexity
 
 
-**Brute force approach**
+***Brute force approach***
 
 Any subarray will be defined by two indices which are bounded by the size of array. And here, to find the maximum sum contiguous subarray, we would run two loops. The outer loop picks the beginning element, the inner loop finds the maximum possible sum with first element picked by outer loop and compares this maximum with the overall maximum. Finally return the overall maximum. 
 
