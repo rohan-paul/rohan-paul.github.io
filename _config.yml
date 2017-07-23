@@ -5,8 +5,8 @@ baseurl: "" # the subpath of your site, e.g. /blog/
 google_analytics_key: ""
 
 # Default description in social shares for the jekyll-seo-tag gem
-description: > # this means to ignore newlines until "baseurl:"
- The great ever-changing JavaScript world that is eating the world.
+# description: > # this means to ignore newlines until "baseurl:"
+#  The great ever-changing JavaScript world that is eating the world.
 
 # Author details for the jekyll-seo-tag gem
 author:
