@@ -7,7 +7,7 @@ categories: JavaScript
 ---
 <img src="/images/fulls/Max-Subarray-Sum-Kadane.jpeg" class="fit image">
 
-The maximum subarray sum, a very famous and clssic Computer Science problem, that I just faced doing one of [Leetcode challenges](https://leetcode.com/problems/maximum-average-subarray-i/#/description).
+The maximum subarray sum, a very famous and classic Computer Science problem, that I just faced doing one of [Leetcode challenges](https://leetcode.com/problems/maximum-average-subarray-i/#/description).
 
 **Original Problem: -**
 
