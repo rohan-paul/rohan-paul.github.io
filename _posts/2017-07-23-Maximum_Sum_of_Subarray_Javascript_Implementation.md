@@ -40,8 +40,6 @@ The difference between the O(N^2) and O(N^3) functions is that in the O(N^2) fun
 
 <script src="https://gist.github.com/rohan-paul/f1d5fc300939068950329f50c33a87e3.js"></script>
 
-
-
 **Divide and conquer approach to solve - Much improved time-complexity**
 
 First, the nature of divide-and-conquer is to solve problems recursively as such:
