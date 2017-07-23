@@ -25,9 +25,7 @@ Below is my code to solve this using Kadane's Algorithm.
 
 Now the above Leetcode challenge is a special case of the general [**Max Subarray**](https://en.wikipedia.org/wiki/Maximum_subarray_problem) classic problem in computer science - which is the task of finding the contiguous subarray within a one-dimensional array of numbers which has the largest sum. For example, for the sequence of values −2, 1, −3, 4, −1, 2, 1, −5, 4; the contiguous subarray with the largest sum is 4, −1, 2, 1, with sum 6.
 
-
 We will solve it under 3 different approaches with different time compexities:-
-
 
 **Brute force approach to solve - Most inefficient time complexity**
 
