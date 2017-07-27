@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Maximum Sum of Subarray, a Javascript implementation
+title: Maximum Sum of a Subarray, a Javascript implementation
 comments: true
 author: Rohan Paul
 categories: JavaScript

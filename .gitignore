@@ -47,3 +47,7 @@ node_modules
 !/log/.keep
 /tmp
 /.gems
+
+test-code-1.js
+test-code-2.js
+test-code-3.js

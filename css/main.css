@@ -1,4 +1,5 @@
 @import url("font-awesome.min.css");
+@import url("monokai.css");
 @import url("//fonts.googleapis.com/css?family=Source+Sans+Pro:400,400italic");
 
 /* Reset */
@@ -1560,8 +1561,8 @@
 		}
 
 	body, input, select, textarea {
-		color: #a2a2a2;
-		font-family: "Source Sans Pro", Helvetica, sans-serif;
+		color: #100C0C;
+		font-family: "Times New Roman", Helvetica, sans-serif;
 		font-size: 16pt;
 		font-weight: 400;
 		line-height: 1.75em;
@@ -1584,8 +1585,8 @@
 		}
 
 	strong, b {
-		color: #787878;
-		font-weight: 400;
+		color: #060C06;
+		font-weight: 800;
 	}
 
 	em, i {
@@ -1597,7 +1598,7 @@
 	}
 
 	h1, h2, h3, h4, h5, h6 {
-		color: #787878;
+		color: #F71010;
 		font-weight: 400;
 		line-height: 1em;
 	}
@@ -1667,26 +1668,27 @@
 	}
 
 	code {
-		background: #f7f7f7;
+		background: #FAF8DD;
 		border-radius: 0.35em;
-		border: solid 2px #efefef;
-		font-family: "Courier New", monospace;
-		font-size: 0.9em;
+		border: solid 0.5px #efefef;
+		font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+		font-size: 0.8em;
 		margin: 0 0.25em;
 		padding: 0.25em 0.65em;
+		color: #100C0C;
 	}
 
 	pre {
 		-webkit-overflow-scrolling: touch;
-		font-family: "Courier New", monospace;
+		font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
 		font-size: 0.9em;
-		margin: 0 0 2em 0;
+		margin: 0 0 1em 0;
 	}
 
 		pre code {
 			display: block;
-			line-height: 1.75em;
-			padding: 1em 1.5em;
+			line-height: 1.25em;
+			padding: 0.5em 0.5em;
 			overflow-x: auto;
 		}
 

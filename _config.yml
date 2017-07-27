@@ -3,6 +3,9 @@ title: Paul # Title of your site
 url: "https://rohan-paul.github.io/" # the base hostname & protocol for your site
 baseurl: "" # the subpath of your site, e.g. /blog/
 google_analytics_key: ""
+paginate: 10
+paginate_path: "blog/page:num"
+code_dir: _code
 
 # Default description in social shares for the jekyll-seo-tag gem
 # description: > # this means to ignore newlines until "baseurl:"
