@@ -27,6 +27,27 @@ Each function calls gets its own ``this`` binding. But ``call()`` gives us a way
 
 In the [ES5 spec](https://es5.github.io/#x15.3.4.4), the ``.call()`` method is described in terms of more low level primitives.
 
+**Using ``.call()`` to demehodize a function**
+
+We demethodize the ``split()`` method into a generic function call ``demethSplit`` using ``Function.prototype.call.apply``
+
+
+<p data-height="336" data-theme-id="0" data-slug-hash="vJNeKX" data-default-tab="js" data-user="rohanpaul" data-embed-version="2" data-pen-title="demethodize_split.js" class="codepen">See the Pen <a href="https://codepen.io/rohanpaul/pen/vJNeKX/">demethodize_split.js</a> by Rohan Paul (<a href="https://codepen.io/rohanpaul">@rohanpaul</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+<script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
+
+
+Now note the signature syntax of ``.call()`` and ``.apply()``
+
+
+``function.call(thisArg, arg1, arg2, ...)``
+
+``func.apply(thisArg, [argsArray])``
+
+
+So firstly, we are calling ``Function.prototype.call`` and since ``.call()`` method calls a function with a given ``this`` value and arguments provided individually - that means that whatever we pass into the second ``.apply()``, is going to become the ``thisArg`` in the first ``.call()``.
+
+
+The main idea of this kind of trick is to make my code cleaner. The new function ``demethSplit`` is very much like the old one, except the arguments are "shifted" to the right by one, and the first argument is now what the old function used to expect as the ``this`` context variable.
 
 **Apply()**
 
@@ -69,7 +90,7 @@ The value of this provided for the call to fun. Note that this may not be the ac
 ``
 
 It's usually more of a design decision, by passing ``null`` (or ``undefined``) I am explicitly saying "The function I am calling is pure, it doesn't/shouldn't need to do anything with a context." It also mostly means - "I can call this function over and over again and it will give me the same result back."  And when I pass ``null`` to one of them, I am always doing so because I know the function in question does not care what the ``this`` binding ends up being, since it doesn't use the ``this``binding.
-And for most practical purpose, any occurrence of .call(null, ...), .apply(null, ...) or .bind(null, ...) can safely be shortened to .call(0, ...), .apply(0, ...), and .bind(0, ...), respectively.
+And for most practical purpose, any occurrence of .call(null, ...), .apply(null, ...) or .bind(null, ...) can safely be shortened to .call(0, ...), .apply(0, ...), and .bind(0, ...), respectively. Although a word of caution, its not purely technically correct, as a ``Number`` object is not the same as ``null`` (in strict mode) and the global object (non-strict mode). 
 
 Using ``null`` with ``.apply()`` or ``.call()`` is only usually done with functions that are methods for namespace reasons only, not for object-oriented reasons. In other words, the function ``max()`` is a method on the Math object only because of namespacing reasons, not because the Math object has instance data that the method ``.max()`` needs to access.
 
