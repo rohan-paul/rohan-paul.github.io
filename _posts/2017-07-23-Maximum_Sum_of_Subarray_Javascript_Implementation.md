@@ -138,3 +138,16 @@ return max_so_far
 
 
 <script src="https://gist.github.com/rohan-paul/2663fd64a693ae18b07dfbd04e8412c2.js"></script>
+
+However, the algorithm simply returns 0, if all the numbers in the array are negative. So, in this case, if we want the smallest negative number (in terms of absolute value) to be returned, tweak the above code like below : 
+
+<script src="https://gist.github.com/rohan-paul/88407e30c9abf6b0679d2a28f30a0248.js"></script>
+
+A common application of Max-subarray problem will be in stock trading - 
+Assuming we have a forcast/modeled future prices of stocks and we have to find sequence of days so that, the net change from last to first is maximized
+- Look at the daily change in price
+- Change on day i: price day i minus price day i-1
+- We now have an array of changes (numbers), e.g.
+	12,-3,-24,20,-3,-16,-23,18,20,-7,12,-5,-22,14,-4,6 
+- Find contiguous subarray with largest sum maximum subarray
+E.g.: buy after day 7, sell after day 11

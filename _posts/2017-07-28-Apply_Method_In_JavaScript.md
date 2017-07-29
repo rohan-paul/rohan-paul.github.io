@@ -21,13 +21,13 @@ So, ``this`` in a normal function refers the ``global`` object. If it's in stric
 
 **Call()**
 
-Each function calls gets its own ``this`` binding. But ``call()`` gives us a way to "borrow" a method from one object to use for another by specifyng what that ``this`` binding would be. ``.call()`` attaches ``this`` into function and executes the function immediately.
+Each function calls gets its own ``this`` binding. But ``call()`` gives us a way to "borrow" a method from one object to use for another by specifyng what that ``this`` binding would be. ``.call()`` attaches ``this`` into function and executes thefunction immediately.
 
 <script src="https://gist.github.com/rohan-paul/6d894a29ed0957aa1d0786f9013501c9.js"></script>
 
 In the [ES5 spec](https://es5.github.io/#x15.3.4.4), the ``.call()`` method is described in terms of more low level primitives.
 
-**Using ``.call()`` to demehodize a function**
+**Using ``.call()`` to demehodize native JS methods**
 
 We demethodize the ``split()`` method into a generic function call ``demethSplit`` using ``Function.prototype.call.apply``
 
@@ -45,6 +45,19 @@ Now note the signature syntax of ``.call()`` and ``.apply()``
 
 
 So firstly, we are calling ``Function.prototype.call`` and since ``.call()`` method calls a function with a given ``this`` value and arguments provided individually - that means that whatever we pass into the second ``.apply()``, is going to become the ``thisArg`` in the first ``.call()``.
+
+Another, slighlty longer way to write the above ``demehodize()``  function would be ..
+
+```
+function demethodize(fn) {
+	return function (that, y) {
+		return fn.call(that, y);
+	}
+	
+}
+```
+
+**In the above we are basically writing a function, that takes an argument (which itself is a function), and returns a function, that in turn calls that original argument with ``Function.prototype.call`` and passing a spcific ``this`` value to that called function.**
 
 
 The main idea of this kind of trick is to make my code cleaner. The new function ``demethSplit`` is very much like the old one, except the arguments are "shifted" to the right by one, and the first argument is now what the old function used to expect as the ``this`` context variable.
