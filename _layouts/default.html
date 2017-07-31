@@ -21,6 +21,10 @@
     {% seo %}
     {% feed_meta %}
 
+    {% if page.use_math %}
+      {% include mathjax_support %}
+    {% endif %}
+
 	</head>
 
 	<body id="top">
