@@ -65,7 +65,7 @@ These 2 are highly related concepts. If we have to define a ``function(n)``
 
 Recursive way would be - function(n) calls itself until meet base condition, while Induction is when base condition is met, trying to prove (base case + 1) is also correct. 
 
-The way I approach them is, when defining a recursive function, making sure to write down a clear, concise specification of its behavior, then mentally (or on paper) trying give an inductive proof that my code satisfies the specification. So, when programming recursively, think inductively.
+The way I approach them is, when defining a recursive function, making sure to write down a clear, concise specification of its behavior, then mentally trying give an inductive proof that my code satisfies the specification. So, when programming recursively, think inductively.
 
 A recursive definition defines an object in terms of smaller objects of the same type. Because this process has to end at some point, we need to include explicit definitions for the smallest objects. So a recursive definition always has two parts:
 • Base case or cases
