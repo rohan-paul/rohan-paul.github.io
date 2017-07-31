@@ -13,9 +13,9 @@ In computer science, Recursion is the process of repeating a procedure, subject 
 
 Recursion is best applied when I need to call the same function repeatedly with different parameters from within a loop. While it can be used in many situations, it is most effective for solving problems involving iterative branching, such as fractal math, sorting, search alogorithm or traversing the nodes of complex or non-linear data structures.
 
-Although Javascript doesn't have a solid **tail call optimization**, recursion is often the best way to go. And for careful developers, except in edge cases, we're not going to get call stack overflows. Further, now ECMAScript 6 offers tail call optimization, where you can make some function calls without growing the call stack.
+Although Javascript doesn't have a solid [tail call optimization](http://wiki.c2.com/?TailCallOptimization), recursion is often the best way to go. And for careful developers, except in edge cases, we're not going to get call stack overflows. Further, now ECMAScript 6 offers tail call optimization, where you can make some function calls without growing the call stack.
 
-As to the debate of using Recursion in Javascript, performance is ofcourse very important, and so is premature optimization too. If you think that recursion is more elegant than iteration, then we should it. If it turns out this is your bottleneck (which may never be), then you can replace with some less-beautiful iteration. Beyond, elegance, readability and maintainability are the other 2 very important factor to consider, and in my opinion recursion is very easy to read, thus maintainable.
+As to the debate of using Recursion in Javascript, performance is ofcourse very important, and so is premature optimization too. If you think that recursion is more elegant than iteration, then we should it. If it turns out this is your bottleneck, which may never be, then you can replace with some less-beautiful iteration. Beyond, elegance, readability and maintainability are the other 2 very important factor to consider, and in my opinion recursion is very easy to read, thus maintainable.
 
 Lets solve few classic problems with Recursion
 
@@ -140,6 +140,7 @@ To apply the breakpoint, click the line number in the js / html file within the 
 
 There is an overlay in the browser with a section written ``Debugger paused`` and above it will be four buttons.
 The first button with a play-pause-like sign is for resuming the script execution. Clicking it will continue the execution of the script and exit the debugger. The next three buttons are:
+
 **Stepping Over** - This button with a bent arrow pointing downwards and a dot is for stepping over the next function call. This is what you will use most of the time. It simply executes the current line, and stops at the next line.
 
 **Stepping Into** - This button with a downward pointing arrow is for stepping into the next function call. This takes the debugger into a function, if that line calls a certain function.
