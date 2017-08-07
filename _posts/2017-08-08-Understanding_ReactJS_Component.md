@@ -17,16 +17,6 @@ function Computer(props) {
 }
 ```
 
-Every component will be having its own action, reducer, sagas. A basic structure will be something like below.
-
-<p data-height="581" data-theme-id="0" data-slug-hash="dzpXRY" data-default-tab="js" data-user="rohanpaul" data-embed-version="2" data-pen-title="React-Redux-Basic-Structure" class="codepen">See the Pen <a href="https://codepen.io/rohanpaul/pen/dzpXRY/">React-Redux-Basic-Structure</a> by Rohan Paul (<a href="https://codepen.io/rohanpaul">@rohanpaul</a>) on <a href="https://codepen.io">CodePen</a>.</p>
-<script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
-
-Top level reducer index.js will import reducers of all other components, similarly top level action and sagas index.js import action and sagas from components respectively.
-
-
-**Component’s Structure**
-
 Components take raw data and render it as HTML in the DOM. It describes what to render. They utilize properties (props for short) and states which contribute to this raw data. Both props and states are plain Javascript objects, any changes to them trigger a render update and they are deterministic.
 
 Components have one requirement; they must implement render, a function that tells the component what to render. There are two ways to create a component. React traditionally provided the ``React.createClass`` method to create component classes, and then using ES6 with ``extends React.Component``, which extends the Component class instead of calling ``createClass``.
