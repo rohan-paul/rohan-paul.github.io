@@ -8,7 +8,7 @@ categories: JavaScript
 <img src="/images/fulls/Create_React_App.jpeg" class="fit image">
 
 
-If you have stuggled to set up a React Application from ground zero, you’ve probably know that starting a React.js project can be quite painful. Indeed, there is a lot of tools to know and to setup before even writing the first line of your actual application code.
+If you have struggled to set up a React Application from ground zero, you’ve probably know that starting a React project can be quite painful. Indeed, there is a lot of tools to know and to setup before even writing the first line of your actual application code.
 
 And then came [create-react-app cli](https://github.com/facebookincubator/create-react-app) from the great React Engineering team at facebook, Dan Abramov and his friends. So lets try to know this powerful tool a little bit more.
 
