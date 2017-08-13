@@ -18,7 +18,7 @@ All JSX tags have to be manually closed so change your navbar tags.
 <script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
 
 
-Code written with JSX will be converted to use ``React.createElement()``. You will not typically invoke React.createElement() directly if you are using JSX.
+ There's an abstraction layer between JSX and what’s actually going on in React land. This abstraction layer is that JSX is always going to get transpiled to ``React.createElement()`` invocations (typically) via Babel. We will not typically invoke ``React.createElement()`` directly if we are using JSX.
 
 <p data-height="326" data-theme-id="0" data-slug-hash="WEEEKo" data-default-tab="js" data-user="rohanpaul" data-embed-version="2" data-pen-title="WEEEKo" class="codepen">See the Pen <a href="https://codepen.io/rohanpaul/pen/WEEEKo/">WEEEKo</a> by Rohan Paul (<a href="https://codepen.io/rohanpaul">@rohanpaul</a>) on <a href="https://codepen.io">CodePen</a>.</p>
 <script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
@@ -36,9 +36,12 @@ The ``createElement`` method takes three arguments:
 
 ```
 React.createElement(type, [props], [...children])
+
 ```
 
-For React elements, ``props`` are the same as attributes. For an example, to pass in the ``src`` attribute to ``img`` element, we'd provide an object with a ``src`` property set to the location of our logo.
+The first is a tag name string (div, span, etc), the second is any attributes you want the element to have, the third is contents or the children of the element. And a React element is simply an object representation of a DOM node. A React element isn’t actually the thing we see on our screen, instead, it’s just an object representation of it.
+
+For React elements, ``props`` are the same as attributes. For an example, to pass in the ``src`` attribute to ``img`` element, we'd provide an object (key-value pair) with a ``src`` property set to the location of our logo.
 
 ```
 var Logo = React.createElement('img', { src: './img/logo.png' });
@@ -46,7 +49,8 @@ var Logo = React.createElement('img', { src: './img/logo.png' });
 
 Because JSX is JavaScript, we can't use JavaScript reserved words, like ``class`` and ``for``.
 
-Thats why React gives us the attribute ``className``. We use it in ``HelloWorld`` to set the ``large`` class on our ``h1`` tag. There are a few other attributes, such as the ``for`` attribute on a label that React translates into ``htmlFor`` as ``for`` is also a reserved word. If we want to write pure JavaScript instead of rely on a JSX compiler, we can just write the ``React.createElement()`` function and not worry about the layer of abstraction. But JSX gives us more readibility, especially with complex components. Consider the following JSX:
+Thats why React gives us the attribute ``className``. We use it in ``HelloWorld`` to set the ``large`` class on our ``h1`` tag. There are a few other attributes, such as the ``for`` attribute on a label that React translates into ``htmlFor`` as ``for`` is also a reserved word. If we want to write pure JavaScript instead of rely on a JSX compiler, we can just write the ``React.createElement()`` function and not worry about the layer of abstraction. 
+Odds are if you’ve been using React for any amount of time, you don’t use ``React.createElement`` to create our object representations of the DOM. JSX gives us more readibility, especially with complex components. Consider the following JSX:
 
 <p data-height="418" data-theme-id="0" data-slug-hash="mMMjzj" data-default-tab="js" data-user="rohanpaul" data-embed-version="2" data-pen-title="mMMjzj" class="codepen">See the Pen <a href="https://codepen.io/rohanpaul/pen/mMMjzj/">mMMjzj</a> by Rohan Paul (<a href="https://codepen.io/rohanpaul">@rohanpaul</a>) on <a href="https://codepen.io">CodePen</a>.</p>
 <script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
@@ -57,12 +61,12 @@ Lets look at another JSX code
 var App = (
   <div>
     <div><img src="./img/logo.png" /></div>
-    <footer>© 2016 Brew Creative Limited. All rights reserved.</footer>
+    <footer>2017. All rights reserved.</footer>
   </div>
 );
 ReactDOM.render(App, document.getElementById('renderTarget'));
 ```
-And its transpiled version in the online [Babel compiler](https://babeljs.io/repl/#?babili=false&evaluate=true&lineWrap=false&presets=es2015%2Creact%2Cstage-2&targets=&browsers=&builtIns=false&debug=false&code_lz=G4QwTgBAggDjEF4IAoBQEIB4AmBLYAfOhlnoZrgLYDmEAzmAMYIBEAdAPRXUcA2A9tX5sYAO2osIHApg5kiJLADN-_AC4BTMAQCVEAEwAGAIwB2aL14QwuagAs1daxrpbgG7G1kr1WhVjl8IgBKAG5UACUNEEY1ABEAeQBZNjANUWwtZFgYABoIbH5GAFdKdLU2ag01AFFeDTLRNQAhAE8ASWxkAHI0jK0AFXAqtW7gsKA) 
+And its transpiled version in the online [Babel compiler](https://babeljs.io/repl/#?babili=false&evaluate=true&lineWrap=false&presets=es2015%2Creact%2Cstage-2&targets=&browsers=&builtIns=false&debug=false&code_lz=G4QwTgBAggDjEF4IAoBQEIB4AmBLYAfOhlnoZrgLYDmEAzmAMYIBEAdAPRXUcA2A9tX5sYAO2osIHApg5kiJLADN-_AC4BTMAQBMABgCMAdmi9eEMLmoALNXQsa6W4BuxtZK9VoVY5-IgCUANyoAEoaIIxqACIA8gCybGAaothayLAwADQQ2PyMAK6UKWps1BpqAKK8GsWiagBCAJ4AktjIAOTJqVoAKuDlah0BwUA) 
 
 <img src="/images/fulls/Babel-JSX-1.png" class="fit image">
 
@@ -70,12 +74,12 @@ And its transpiled version in the online [Babel compiler](https://babeljs.io/rep
 In any app, to transpile JSX in the browser itself using Babel, first, include the Babel Core library in the ``<head>`` element, and add a type to the script tag like so..
 
 ```
-...
+<head>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.js"></script>
 </head>
-```
 
-```
+.....
+
 <body>
 <script type="text/babel">
     var App = (
