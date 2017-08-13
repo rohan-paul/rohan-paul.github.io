@@ -1,0 +1,86 @@
+---
+layout: post
+title: JSX Understanding In The Context Of Reactjs
+comments: true
+author: Rohan Paul
+categories: JavaScript
+---
+<img src="/images/fulls/JSX-Understanding.jpeg" class="fit image">
+
+[JSX](http://facebook.github.io/jsx/.
+) (JavaScript in XML  or JavaScript Syntax eXtension) in most simple word is how React allows us to write HTML in JavaScript, in case you prefer the readibility of HTML to raw JavaScript.
+
+JSX is a syntax extension for JavaScript. It was written to be used by React and looks a lot like HTML. But given JSX is not valid JavaScript, web browsers cant read it directly. So, if JavaScript files contains JSX, that that file will have to be transpiled. That means that before the file gets to the web browser, a JSX compiler will translate any JSX into regular JavaScript.
+
+All JSX tags have to be manually closed so change your navbar tags.
+
+<p data-height="250" data-theme-id="0" data-slug-hash="VzzzYG" data-default-tab="js" data-user="rohanpaul" data-embed-version="2" data-pen-title="VzzzYG" class="codepen">See the Pen <a href="https://codepen.io/rohanpaul/pen/VzzzYG/">VzzzYG</a> by Rohan Paul (<a href="https://codepen.io/rohanpaul">@rohanpaul</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+<script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
+
+
+Code written with JSX will be converted to use ``React.createElement()``. You will not typically invoke React.createElement() directly if you are using JSX.
+
+<p data-height="326" data-theme-id="0" data-slug-hash="WEEEKo" data-default-tab="js" data-user="rohanpaul" data-embed-version="2" data-pen-title="WEEEKo" class="codepen">See the Pen <a href="https://codepen.io/rohanpaul/pen/WEEEKo/">WEEEKo</a> by Rohan Paul (<a href="https://codepen.io/rohanpaul">@rohanpaul</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+<script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
+
+Checkout this [online Babel compiler](https://babeljs.io/repl/#?babili=false&evaluate=true&lineWrap=false&presets=es2015%2Creact%2Cstage-0&targets=&browsers=&builtIns=false&debug=false&code_lz=DwWQngQgrgLjD2A7ABAY3gG3gJwLwCIAjDKAU32QGcALAQwBN4B3AZQEsAvU3AbwCYAvgD4AUMmQBhDG1QBrZCFIjgAenDQ4SIUA)
+
+Another example
+
+<p data-height="480" data-theme-id="0" data-slug-hash="WEEKEm" data-default-tab="js" data-user="rohanpaul" data-embed-version="2" data-pen-title="WEEKEm" class="codepen">See the Pen <a href="https://codepen.io/rohanpaul/pen/WEEKEm/">WEEKEm</a> by Rohan Paul (<a href="https://codepen.io/rohanpaul">@rohanpaul</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+<script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
+
+The ``render()`` function in the ``HelloWorld`` component looks like it's returning HTML, but this is actually JSX and a more crisp way to write a ``React.createElement()`` function.
+
+The ``createElement`` method takes three arguments:
+
+```
+React.createElement(type, [props], [...children])
+```
+
+For React elements, ``props`` are the same as attributes. For an example, to pass in the ``src`` attribute to ``img`` element, we'd provide an object with a ``src`` property set to the location of our logo.
+
+```
+var Logo = React.createElement('img', { src: './img/logo.png' });
+```
+
+Because JSX is JavaScript, we can't use JavaScript reserved words, like ``class`` and ``for``.
+
+Thats why React gives us the attribute ``className``. We use it in ``HelloWorld`` to set the ``large`` class on our ``h1`` tag. There are a few other attributes, such as the ``for`` attribute on a label that React translates into ``htmlFor`` as ``for`` is also a reserved word. If we want to write pure JavaScript instead of rely on a JSX compiler, we can just write the ``React.createElement()`` function and not worry about the layer of abstraction. But JSX gives us more readibility, especially with complex components. Consider the following JSX:
+
+<p data-height="418" data-theme-id="0" data-slug-hash="mMMjzj" data-default-tab="js" data-user="rohanpaul" data-embed-version="2" data-pen-title="mMMjzj" class="codepen">See the Pen <a href="https://codepen.io/rohanpaul/pen/mMMjzj/">mMMjzj</a> by Rohan Paul (<a href="https://codepen.io/rohanpaul">@rohanpaul</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+<script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
+
+Lets look at another JSX code
+
+```
+var App = (
+  <div>
+    <div><img src="./img/logo.png" /></div>
+    <footer>© 2016 Brew Creative Limited. All rights reserved.</footer>
+  </div>
+);
+ReactDOM.render(App, document.getElementById('renderTarget'));
+```
+And its transpiled version in the online [Babel compiler](https://babeljs.io/repl/#?babili=false&evaluate=true&lineWrap=false&presets=es2015%2Creact%2Cstage-2&targets=&browsers=&builtIns=false&debug=false&code_lz=G4QwTgBAggDjEF4IAoBQEIB4AmBLYAfOhlnoZrgLYDmEAzmAMYIBEAdAPRXUcA2A9tX5sYAO2osIHApg5kiJLADN-_AC4BTMAQCVEAEwAGAIwB2aL14QwuagAs1daxrpbgG7G1kr1WhVjl8IgBKAG5UACUNEEY1ABEAeQBZNjANUWwtZFgYABoIbH5GAFdKdLU2ag01AFFeDTLRNQAhAE8ASWxkAHI0jK0AFXAqtW7gsKA) 
+
+<img src="/images/fulls/Babel-JSX-1.png" class="fit image">
+
+
+In any app, to transpile JSX in the browser itself using Babel, first, include the Babel Core library in the ``<head>`` element, and add a type to the script tag like so..
+
+```
+...
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.js"></script>
+</head>
+```
+
+```
+<body>
+<script type="text/babel">
+    var App = (
+      <div>
+        <div><img src="./img/logo.png" /></div>
+        <footer>© 2017 All rights reserved.</footer>
+</body>
+```

@@ -19,12 +19,18 @@ function Computer(props) {
 
 Components take raw data and render it as HTML in the DOM. It describes what to render. They utilize properties (props for short) and states which contribute to this raw data. Both props and states are plain Javascript objects, any changes to them trigger a render update and they are deterministic.
 
-Components have one requirement; they must implement render, a function that tells the component what to render. There are two ways to create a component. React traditionally provided the ``React.createClass`` method to create component classes, and then using ES6 with ``extends React.Component``, which extends the Component class instead of calling ``createClass``.
+Components have one requirement; they must implement ``render``, a function that tells the component what to render. 
+
+**There are three ways to create a component.**
+
+React traditionally provided the **``React.createClass`` method to create component classes**, and then using ES6 with **``extends React.Component``**, which extends the Component class instead of calling ``createClass``. And the third way one is the React Stateless Functional Components. Lets look at them one by one starting with **``React.createClass``**
+
+
 
 <p data-height="415" data-theme-id="0" data-slug-hash="PKWdEJ" data-default-tab="js" data-user="rohanpaul" data-embed-version="2" data-pen-title="firstReactComponent" class="codepen">See the Pen <a href="https://codepen.io/rohanpaul/pen/PKWdEJ/">firstReactComponent</a> by Rohan Paul (<a href="https://codepen.io/rohanpaul">@rohanpaul</a>) on <a href="https://codepen.io">CodePen</a>.</p>
 <script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
 
-And now create the same component class ES6 way as below:
+**And now create the same component class ES6 way as below:**
 
 
 <p data-height="362" data-theme-id="0" data-slug-hash="xLgmaw" data-default-tab="js" data-user="rohanpaul" data-embed-version="2" data-pen-title="Create_React_Component-ES6Way" class="codepen">See the Pen <a href="https://codepen.io/rohanpaul/pen/xLgmaw/">Create_React_Component-ES6Way</a> by Rohan Paul (<a href="https://codepen.io/rohanpaul">@rohanpaul</a>) on <a href="https://codepen.io">CodePen</a>.</p>
@@ -52,6 +58,22 @@ OR nesting the one of the top-level ``<div>`` inside the other like so:
 
 <p data-height="313" data-theme-id="0" data-slug-hash="PKWgVQ" data-default-tab="js" data-user="rohanpaul" data-embed-version="2" data-pen-title="PKWgVQ" class="codepen">See the Pen <a href="https://codepen.io/rohanpaul/pen/PKWgVQ/">PKWgVQ</a> by Rohan Paul (<a href="https://codepen.io/rohanpaul">@rohanpaul</a>) on <a href="https://codepen.io">CodePen</a>.</p>
 <script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
+
+
+**And the third way one is the React Stateless Functional Components**
+
+This is a new syntax/pattern for defining components as a function of props. It was introduced in React v0.14. [From the release notes](https://facebook.github.io/react/blog/2015/10/07/react-v0.14.html#stateless-functional-components)
+
+"In idiomatic React code, most of the components you write will be stateless, simply composing other components. We’re introducing a new, simpler syntax for these components where you can take props as an argument and return the element you want to render". Lets look at some some examples of Stateless Functional Component
+
+<p data-height="979" data-theme-id="0" data-slug-hash="LjjqNK" data-default-tab="js" data-user="rohanpaul" data-embed-version="2" data-pen-title="LjjqNK" class="codepen">See the Pen <a href="https://codepen.io/rohanpaul/pen/LjjqNK/">LjjqNK</a> by Rohan Paul (<a href="https://codepen.io/rohanpaul">@rohanpaul</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+<script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
+
+This pattern is similar to the "traditional" one, except for the fact that we're using simple functions instead of methods defined in a class. This can be useful when we want to extract functions out of the class (e.g for readability and cleanliness sake).
+
+A functional component is just a function. It's not a class. As such, there's no global ``this`` object. This means that when we're doing a ``render`` we're basically creating a new instance of a ``ReactComponent``, thus leaving out the possibility for these javascript objects to communicate with each other via some global ``this``. This also makes the use of state and any life-cycle methods impossible as a consequence.
+
+Generally, using the new pattern is recommended whenever possible! If we only need a ``render`` method, but no life-cycle methods or state, use this pattern.
 
 
 **Properties**
