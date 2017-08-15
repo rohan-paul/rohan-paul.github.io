@@ -13,7 +13,7 @@ categories: JavaScript
 JSX is a syntax extension for JavaScript. It was written to be used by React and looks a lot like HTML. But given JSX is not valid JavaScript, web browsers cant read it directly. So, if JavaScript files contains JSX, that that file will have to be transpiled. That means that before the file gets to the web browser, a JSX compiler will translate any JSX into regular JavaScript.
 
 JSX produces React "elements". A React element is simply an object representation of a DOM node. A React element isn’t actually the thing we see on our screen, instead, it’s just an object representation of it.
-You can embed any JavaScript expression in JSX by wrapping it in curly braces. All JSX tags have to be manually closed. 
+We can embed any JavaScript expression in JSX by wrapping it in curly braces. All JSX tags have to be manually closed. 
 
 <p data-height="250" data-theme-id="0" data-slug-hash="VzzzYG" data-default-tab="js" data-user="rohanpaul" data-embed-version="2" data-pen-title="VzzzYG" class="codepen">See the Pen <a href="https://codepen.io/rohanpaul/pen/VzzzYG/">VzzzYG</a> by Rohan Paul (<a href="https://codepen.io/rohanpaul">@rohanpaul</a>) on <a href="https://codepen.io">CodePen</a>.</p>
 <script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
@@ -175,8 +175,10 @@ And then define the ``componentDidMount`` inside the ``MyApp`` component, and al
 
 ``marker`` has been defined to set the marker properties like map, position, and animation.
 
-And finally we reder the map component inside the ``#main`` div.
+And finally we render the map component inside the ``#main`` div. See the final result below.
 
+<p data-height="628" data-theme-id="0" data-slug-hash="VzMoGE" data-default-tab="result" data-user="rohanpaul" data-embed-version="2" data-pen-title="VzMoGE" class="codepen">See the Pen <a href="https://codepen.io/rohanpaul/pen/VzMoGE/">VzMoGE</a> by Rohan Paul (<a href="https://codepen.io/rohanpaul">@rohanpaul</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+<script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
 
 
 
