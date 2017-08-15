@@ -18,7 +18,7 @@ onclick, onfocus, etc. The problem with this API (and the reason why it is not u
 is that it’s full of undesirable side effects: it pollutes the global scope, it’s hard to track in the context of a big
 HTML file, it can be slow, and it can lead to memory leaks, just to name a few issues.
 
-Taking from [React Documentation](https://facebook.github.io/react/docs/handling-events.html) - With JSX you pass a function as the event handler, rather than a string.
+Taking from [React Documentation](https://facebook.github.io/react/docs/handling-events.html) itself for event handling in React with JSX, you pass a function as the event handler, rather than a string as opposed to plain HTML.
 For example, the HTML:
 
 ```
@@ -93,7 +93,7 @@ render() {
 }
 ```
 
-However, it's not recommended to apply the ``.bind`` within the render function since it will do it every time the component is rendered. you can move it to some function which runs at the start of the lifecycle i.e. withing the Component constructor. The key here is that the constructor is only called once, not on every render. This means we aren’t creating a bunch of functions and forcing the garbage collector to clean up.  The largest problem with most react apps is the render method containing too much weight, or in other cases firing unchecked.
+However, it's not recommended to apply the ``.bind`` within the render function since it will do it every time the component is re-rendered. you can move it to some function which runs at the start of the lifecycle i.e. withing the Component constructor. The key here is that the constructor is only called once, not on every render. This means we aren’t creating a bunch of functions and forcing the garbage collector to clean up.  The largest problem with most react apps is the render method containing too much weight, or in other cases firing unchecked.
 
 **More on the mechanism ``.bind()`` in React event handling**
 
@@ -115,3 +115,22 @@ There are at least 5 ways to handle the "this" context in React. And here's a wo
 
 <p data-height="1827" data-theme-id="0" data-slug-hash="QMOgLQ" data-default-tab="js" data-user="rohanpaul" data-embed-version="2" data-pen-title="QMOgLQ" class="codepen">See the Pen <a href="https://codepen.io/rohanpaul/pen/QMOgLQ/">QMOgLQ</a> by Rohan Paul (<a href="https://codepen.io/rohanpaul">@rohanpaul</a>) on <a href="https://codepen.io">CodePen</a>.</p>
 <script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
+
+There's even a 6th approach by using the very nice library called [autobind-decorator](https://github.com/andreypopp/autobind-decorator)
+
+<p data-height="345" data-theme-id="0" data-slug-hash="OjOgQQ" data-default-tab="js" data-user="rohanpaul" data-embed-version="2" data-pen-title="OjOgQQ" class="codepen">See the Pen <a href="https://codepen.io/rohanpaul/pen/OjOgQQ/">OjOgQQ</a> by Rohan Paul (<a href="https://codepen.io/rohanpaul">@rohanpaul</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+<script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
+
+The ``@autobind`` decorator binds the ``handleClick()`` method and we’re all set. 
+
+And if passing a parameter then we must bind in the ``render`` function and not in the constructor. Using either the ``bind`` or an arrow function.
+
+```
+<li onClick={this.handleClick.bind(this, item.id)} />{item.name}</li>
+```
+
+or using arrow function
+
+```
+<li onClick={() => this.handleClick(item.id)} />{item.name}</li>
+```
