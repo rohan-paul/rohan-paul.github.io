@@ -13,7 +13,37 @@ categories: JavaScript
 JSX is a syntax extension for JavaScript. It was written to be used by React and looks a lot like HTML. But given JSX is not valid JavaScript, web browsers cant read it directly. So, if JavaScript files contains JSX, that that file will have to be transpiled. That means that before the file gets to the web browser, a JSX compiler will translate any JSX into regular JavaScript.
 
 JSX produces React "elements". A React element is simply an object representation of a DOM node. A React element isn’t actually the thing we see on our screen, instead, it’s just an object representation of it.
-We can embed any JavaScript expression in JSX by wrapping it in curly braces. All JSX tags have to be manually closed. 
+We can embed any JavaScript expression in JSX by wrapping it in curly braces. 
+
+
+**Differences Between JSX and HTML**
+
+1.	Tag attributes are camel cased.
+2.	All elements must be balanced.
+3.  The attribute names are based on the DOM API, not on the HTML language specs.
+
+No 1. above is obvious in ``maxlength`` in HTML becomes ``maxLength`` in JSX.
+
+**All Elements Must be Balanced** - Since JSX is XML, all elements must be balanced. Tags such as ``<br> and <img>``, which don’t have ending tags, need to be self-closed. So, instead of ``<br>, use <br/>`` and instead of ``<img src="...">``, use ``<img src="..." />``.
+
+
+**Attribute Names are Based on the DOM API** -  When interacting with the DOM API, tag attributes may
+have different names than those you use in HTML. One of such example is class and className.
+For example, given this regular HTML
+
+```
+<div id="box" class="some-class"></div>
+```
+
+if you want to manipulate the DOM and change its class name using plain JavaScript, we would do
+something like ``document.getElementById("box").className="some-other-class"``
+
+As far as JavaScript is concerned, that attribute is called ``className``, not ``class``. Since JSX is just a syntax extension to JavaScript, it conforms to the attribute names as defined in the DOM. That same div should be expressed in JSX as
+
+```
+return <div id="box" className="some-class"></div>
+```
+
 
 <p data-height="250" data-theme-id="0" data-slug-hash="VzzzYG" data-default-tab="js" data-user="rohanpaul" data-embed-version="2" data-pen-title="VzzzYG" class="codepen">See the Pen <a href="https://codepen.io/rohanpaul/pen/VzzzYG/">VzzzYG</a> by Rohan Paul (<a href="https://codepen.io/rohanpaul">@rohanpaul</a>) on <a href="https://codepen.io">CodePen</a>.</p>
 <script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
@@ -179,25 +209,3 @@ And finally we render the map component inside the ``#main`` div. See the final 
 
 <p data-height="628" data-theme-id="0" data-slug-hash="VzMoGE" data-default-tab="result" data-user="rohanpaul" data-embed-version="2" data-pen-title="VzMoGE" class="codepen">See the Pen <a href="https://codepen.io/rohanpaul/pen/VzMoGE/">VzMoGE</a> by Rohan Paul (<a href="https://codepen.io/rohanpaul">@rohanpaul</a>) on <a href="https://codepen.io">CodePen</a>.</p>
 <script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
