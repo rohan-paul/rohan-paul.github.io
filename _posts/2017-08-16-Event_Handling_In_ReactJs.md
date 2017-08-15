@@ -97,6 +97,8 @@ However, it's not recommended to apply the ``.bind`` within the render function 
 
 **More on the mechanism ``.bind()`` in React event handling**
 
+Very simply, we use ``bind()`` to create bounded methods and by binding ``this.handleClick`` to ``this`` , we make sure that no matter how we call the function the context remains the same.
+
 Calling ``f.bind(someObject)`` creates a new function with the same body and scope as f, but where this occurs in the original function, in the new function it is permanently bound to the first argument of bind, regardless of how the function is being used.
 In JavaScript, class methods are not bound by default. If you forget to bind ``this.handleClick`` and pass it to onClick, this will be undefined when the function is actually called.
 
