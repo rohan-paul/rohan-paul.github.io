@@ -82,6 +82,21 @@ Props (short for properties) are a Component's configuration. They are received 
 A Component cannot change its props, but it is responsible for putting together the props of its child Components. Props do not have to just be data -- callback functions may be passed in as props.
 When a component is rendered, it can access its "props" using ``this.props``. In the code above, the Chat component uses ``this.props.chat``
 
+Per React's [Thinking in React](https://facebook.github.io/react/docs/thinking-in-react.html) documentation, props are best explained as "a way of passing data from parent to child." That's it. In essence, props are just a communication channel between components, always moving from top (parent) to bottom (child). A quick example:
+
+<p data-height="453" data-theme-id="0" data-slug-hash="YxYbyO" data-default-tab="js" data-user="rohanpaul" data-embed-version="2" data-pen-title="YxYbyO" class="codepen">See the Pen <a href="https://codepen.io/rohanpaul/pen/YxYbyO/">YxYbyO</a> by Rohan Paul (<a href="https://codepen.io/rohanpaul">@rohanpaul</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+<script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
+
+
+So what's happening here? First, notice that we have two separate components <Parent /> and <TacosList />. In this example, we want to pass our data from <Parent /> to <TacosList /> using props. The data we want to pass from our parent to our child is a short list of taco names (the array assigned to the tacos property on our <Parent /> component).
+
+To pass them to the child, we define a property on that child component where that data will be passed through. In this case, we define a property or "prop" in React-slang called tacos on the <TacosList /> component. Next, using the JSX braces syntax for specifying JavaScript code within our markup, we grab our array of tacos from the parent by calling this.tacos. Here, we're literraly saying to the <TacosList /> component, "here's a list of tacos, go nuts."
+
+Realize: our <TacosList /> component could care less about what data it's getting as long as 1.) that data is passed through a prop called tacos and the type of data is an Array. We could just as easily pass it a list of candy and it would work fine. If we look at the definition of our <TacosList /> component, we can see how this works.
+
+Like we'd expect, we're pulling in our array of tacos from the <Parent /> component by calling to this.props.tacos from within our <TacosList /> (or child) component. This resolves the first requirement. Next, we call .map() on this value to iterate over it, meaning, we expect the value to be an array.
+
+From there, we assign a variable in our map's arguments to reference each value being iterated over taco and then use it accordingly (in this case, we just print the name of the taco on to the page).
 
 
 **States**
