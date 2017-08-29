@@ -142,8 +142,20 @@ However, if you want to pass data from a child to it's parent, you can use a cal
 
 - Define a callback in parent component which takes the data I need in as a parameter.
 - Pass that callback as a prop to the child.
-- Call the callback using this.props.[callback] in the child (insert your own name where it says [callback] of course), and pass in the data as the argument.
+- Call the callback using this.props.[callback] in the child (insert your own name where it says ``[callback]`` of course), and pass in the data as the argument.
 
 
 <p data-height="511" data-theme-id="0" data-slug-hash="gxzBKd" data-default-tab="js" data-user="rohanpaul" data-embed-version="2" data-pen-title="gxzBKd" class="codepen">See the Pen <a href="https://codepen.io/rohanpaul/pen/gxzBKd/">gxzBKd</a> by Rohan Paul (<a href="https://codepen.io/rohanpaul">@rohanpaul</a>) on <a href="https://codepen.io">CodePen</a>.</p>
 <script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
+
+**Another example to call Parent's function from Child component**
+
+Below is a simple toggle function that I will call from Child component. So, in order to call the parent’s method ( ``doParentToggle`` ), the same line of flow of codes is followed as above example.  
+
+- A) The callback function is first defined in the Parent component, 
+- B) then within the Parent component, we instantiate a variable ``parentToggle`` to assign ``{this.doParentToggle}`` for the Child component. 
+- C) And then, I will have to pass in the function as a property to Child component then trigger from child ``onClick`` method. So, inside the Child component's ``doParentToggleFromChild`` function I call the Parent's function using ``this.props.[callback]`` style. This is here, ``this.props.parentToggle``
+
+But here we are not just calling a simple function, you are passing in some parameters from child to parent and changing some states to parent.
+
+<script async src="//jsfiddle.net/rohanpaul/cpzxfh32/10/embed/js,html,css,result/dark/"></script>
