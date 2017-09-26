@@ -11,9 +11,7 @@ In React, props are immutable pieces of data that are passed into child componen
 
 **Basic data flow in a React app**
 
-The basic idea with React is whenever we have nested components – for example, ``Chat``, which has a list of ``ChatMessages`` – the parent component updates each child.
-
-This is what we’re doing in our code now. The ``Chat`` component has a list of messages. Each message is given to a ``ChatMessage``, in other words, the data flows from parent (``Chat``) to child (``ChatMessage``).
+The basic idea with React is whenever we have nested components – for example, ``Chat``, which has a list of ``ChatMessages`` – the parent component updates each child. The ``Chat`` component has a list of messages. Each message is given to a ``ChatMessage``, in other words, the data flows from parent (``Chat``) to child (``ChatMessage``).
 
 We also should have a form used to add new messages. The input field within the form can be thought of as child components too. In that case, the flow is different: The input sends an event, which goes back to ``Chat``, which updates itself. Then, the data flows to the children if anything is changed.
 
@@ -29,7 +27,7 @@ So what's happening here? First, notice that we have two separate components <Pa
 
 To pass them to the child, we define a property on that child component where that data will be passed through. In this case, we define a property or "prop" in React-slang called tacos on the <TacosList /> component. Next, using the JSX braces syntax for specifying JavaScript code within our markup, we grab our array of tacos from the parent by calling this.tacos. Here, we're literraly saying to the <TacosList /> component, "here's a list of tacos, go nuts."
 
-Realize: our <TacosList /> component could care less about what data it's getting as long as 1.) that data is passed through a prop called tacos and the type of data is an Array. We could just as easily pass it a list of candy and it would work fine. If we look at the definition of our <TacosList /> component, we can see how this works.
+Realize: our <TacosList /> component couldn't care less about what data it's getting as long as 1.) that data is passed through a prop called tacos and the type of data is an Array. We could just as easily pass it a list of candy and it would work fine. If we look at the definition of our <TacosList /> component, we can see how this works.
 
 Like we'd expect, we're pulling in our array of tacos from the <Parent /> component by calling to this.props.tacos from within our <TacosList /> (or child) component. This resolves the first requirement. Next, we call .map() on this value to iterate over it, meaning, we expect the value to be an array.
 
@@ -59,12 +57,12 @@ ReactDOM.render(<App profileData={DATA} />, document.getElementById('root'));
 
 This is how we specify where on the page we want the ``App`` component to be rendered. This is done by calling ``ReactDOM.render``, passing in the App component as the first argument and a reference to a ``div`` with the id of ``root`` as the second. So this entire app will go into this ``root`` div. Also note, how you pass the ``DATA`` into the App component, by simply changing a little bit on the ``ReactDOM.render`` method. And the curly brackets tells React that we’re escaping out of the JSX syntax in order to add a Javascript expression (``DATA``).
 
-And with the above line of code in ``ReactDOM.render`` now we’re able to access this data from within the App component through this.props.profileData. However, the App component is simply a wrapper around the ``Profile`` and ``Hobbies`` components, so we’re going to send the data further down the hierarchy, as a prop to the child by instantiating it within the parent. 
+And with the above line of code in ``ReactDOM.render`` now we’re able to access this data from within the App component through ``this.props.profileData`` . However, the App component is simply a wrapper around the ``Profile`` and ``Hobbies`` components, so we’re going to send the data further down the hierarchy, as a prop to the child by instantiating it within the parent. 
 
 <p data-height="320" data-theme-id="0" data-slug-hash="OjZrwj" data-default-tab="js" data-user="rohanpaul" data-embed-version="2" data-pen-title="OjZrwj" class="codepen">See the Pen <a href="https://codepen.io/rohanpaul/pen/OjZrwj/">OjZrwj</a> by Rohan Paul (<a href="https://codepen.io/rohanpaul">@rohanpaul</a>) on <a href="https://codepen.io">CodePen</a>.</p>
 <script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
 
-We instantiate three variables withing the top-level ``App`` component; ``imgURL`` and ``name`` for ``Profile`` component, and only ``hobbyList`` for ``Hobbies`` component. This is because the ``Hobbies`` component doesn’t need the rest of the data; it’s simply going to display a list of hobbies.
+We instantiate three variables within the top-level ``App`` component; ``imgURL`` and ``name`` for ``Profile`` component, and only ``hobbyList`` for ``Hobbies`` component. This is because the ``Hobbies`` component doesn’t need the rest of the data; it’s simply going to display a list of hobbies.
 
 And then notice, inside the ``Profile`` component we fetch the data that we’ve passed down to it from ``App`` component by using ``this.props.name`` and ``this.props.imgURL``
 

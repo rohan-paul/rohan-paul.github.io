@@ -166,6 +166,36 @@ It is often desirable to divide components based on their primary responsibility
 Presentational components are concerned only with displaying data - they can be regarded as, and are often implemented as, functions that convert a model to a view. Typically they do not maintain any internal state. 
 Container components are concerned with managing data. This may be done internally through their own state, or by acting as intermediaries with a state-management library such as Redux. Initialization of the state and update of the state are handled in container component. The container component will not directly display data, rather it will pass the data to a presentational component.
 
+**Setting the initial state**
+
+There are two approaches - We can use ``getInitialState`` or ``this.state``
+
+The two approaches are not interchangeable. You should initialize state in the constructor when using ES6 classes, and define the getInitialState method when using React.createClass. 
+
+``getInitialState`` retuns an object and that object gets set to ``this.state``
+
+
+```
+class MyComponent extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { /* initial state */ };
+  }
+}
+```
+
+is equivalent to
+
+```
+var MyComponent = React.createClass({
+  getInitialState() {
+    return { /* initial state */ };
+  },
+});
+```
+
+
+
 **Updating state**
 
 When a Component needs to have and manage its ``state`` we usually write the Component as a class, and have its statel live in the class ``constructor`` function.
