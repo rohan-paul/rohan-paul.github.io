@@ -23,7 +23,7 @@ Components have one requirement; they must implement ``render``, a function that
 
 **There are three ways to create a component.**
 
-React traditionally provided the **``React.createClass`` method to create component classes**, and then using ES6 with **``extends React.Component``**, which extends the Component class instead of calling ``createClass``. And the third way one is the React Stateless Functional Components. Lets look at them one by one starting with **``React.createClass``**
+React traditionally provided the **``React.createClass`` method to create component classes**, and then using ES6 syntax with **``extends React.Component``**, which extends the Component class instead of calling ``React.createClass``. And the third way, is applicable for creating the React Stateless Functional Components that we will discuss below. Lets look at them one by one starting with **``React.createClass``**
 
 
 
@@ -60,7 +60,7 @@ OR nesting the one of the top-level ``<div>`` inside the other like so:
 <script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
 
 
-**And the third way one is the React Stateless Functional Components**
+**And the third way to create component is for React Stateless Functional Components**
 
 This is a new syntax/pattern for defining components as a function of props. It was introduced in React v0.14. [From the release notes](https://facebook.github.io/react/blog/2015/10/07/react-v0.14.html#stateless-functional-components)
 
