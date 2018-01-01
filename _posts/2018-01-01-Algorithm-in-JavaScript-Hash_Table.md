@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Alogrithm-in-JavaScript-Hash Table
+title: Algorithm-in-JavaScript-Hash Table
 comments: true
 author: Rohan Paul
 categories: JavaScript
