@@ -22,14 +22,13 @@ Deletion | O(1) | O(n)
 
 **Hash Function**
 
-The Hash-function takes a key and converts it to a number which will be the index at which to store it. Output of the hash function is an array of key-value pairs, storing each pair at a numeric index. In my ``hash()`` function below, I am computing a hash value by summing the ASCII value of each string (the argument passed-in) using the JavaScript function ``charCodeAt()`` to return a character’s ASCII value after multiplying the ASCII code by a multiplier H which in this case is the odd prime 37. And the reason for choosing this value of 37 is because, research has proven, if you take over 50,000 English words (formed as the union of the word lists provided in two variants of Unix), using the constants 31, 33, 37, 39, and 41 will produce less than 7 collisions in each case. 
+The Hash-function takes a key and converts it to a number which will be the index at which to store it. Output of the hash function is an array of key-value pairs, storing each pair at a numeric index. In my ``hash()`` function below, I am computing a hash value by summing the ASCII value of each string (the argument passed-in) using the JavaScript function ``charCodeAt()`` to return a character’s ASCII value after multiplying the ASCII code by a multiplier H, which in this case, is an odd prime 37. And the reason to choose 37 being, by some empirical research, if we take over 50,000 English words (formed as the union of the word lists provided in two variants of Unix), using the constants 31, 33, 37, 39, and 41 will produce less than 7 collisions in each case, while creating a hasing function.
 
 
 
 **Collision-Resolution**
 
-Even with an efficient hash function, it is possible for two keys to hash (the result of the hash function) to the same value. This is called a collision, and we need a strategy for handling collisions when they occur. In my implementation below, the ``put()`` function receives the array index value from the ``hash()`` function and
-stores the data element in that position. But only after checking that after the "key" value is hased (with the ``hash()`` function) there's no collison. And this can be done in two ways - separate chaining and linear probing (both have been implemented in the below code).
+Even with an efficient hash function, it is possible for two keys to hash (the result of the hash function) to the same value. This is called a collision, and we need a strategy for handling collisions when they occur. In my implementation below, this is taken care of by the ``put()`` function. The ``put()`` function receives the array index value from the ``hash()`` function and stores the ``data`` element in that position. But only after checking that after the k``key`` value is hased (with the ``hash()`` function) there's no collison. And this can be done in two ways - **separate chaining** and **linear probing** (both have been implemented in the below code).
 
 **A generic HashTable Implementation**
 
@@ -48,7 +47,7 @@ stores the data element in that position. But only after checking that after the
 
 I would opine, every object in JavaScript IS a hash. This is a hash of object's properties and methods. Every time I call object's method, property, or just reference any variable, I perform an internal hash lookup.
 
-**Why I need a hashtable instead of just a non-hashed associative array, which definitely will be simpler to implemen**
+**Why I need a hashtable instead of just a non-hashed associative array, which definitely will be simpler to implement**
 
 When using a hashtable, I compute the hash code of a given key to find the associated value. The hashcode is an index in the underlying array of the hashtable. This means that finding a key in a hashtable is as fast as accessing an array by index. So, while searching, the hash table mechanism gives me O(1) performance for any given key search. Accessing an array with an index (e.g. myArray[0] ) is instant; it doesn't require any searching, because the runtime of the languages knows exactly where to find this value.
 
