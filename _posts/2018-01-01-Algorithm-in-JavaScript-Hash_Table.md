@@ -52,4 +52,4 @@ I would opine, every object in JavaScript IS a hash. This is a hash of object's 
 When using a hashtable, I compute the hash code of a given key to find the associated value. The hashcode is an index in the underlying array of the hashtable. This means that finding a key in a hashtable is as fast as accessing an array by index. So, while searching, the hash table mechanism gives me O(1) performance for any given key search. Accessing an array with an index (e.g. myArray[0] ) is instant; it doesn't require any searching, because the runtime of the languages knows exactly where to find this value.
 
  
-And if I do not use a HashTable, I still need some sort of search mechanism. And if I choose, Binary Search Tree, it's  O(log n) not O(1). And if I don't have a search mechanism at all (i.e. I am searching the entire array from top to bottom to find your key), my performance is O(n).
+And if I do not use a HashTable, I still need some sort of search mechanism. And if I choose, Binary Search Tree, it's  O(log n) not O(1). And if I don't have a search mechanism at all (i.e. I am searching the entire array from top to bottom to find my key), my performance is O(n).
