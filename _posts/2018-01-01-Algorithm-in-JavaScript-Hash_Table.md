@@ -48,7 +48,7 @@ stores the data element in that position. But only after checking that after the
 
 I would opine, every object in JavaScript IS a hash. This is a hash of object's properties and methods. Every time I call object's method, property, or just reference any variable, I perform an internal hash lookup.
 
-** Why I need a hashtable instead of just a non-hashed associative array, which definitely will be simpler to implemen **
+**Why I need a hashtable instead of just a non-hashed associative array, which definitely will be simpler to implemen**
 
 When using a hashtable, I compute the hash code of a given key to find the associated value. The hashcode is an index in the underlying array of the hashtable. This means that finding a key in a hashtable is as fast as accessing an array by index. So, while searching, the hash table mechanism gives me O(1) performance for any given key search. Accessing an array with an index (e.g. myArray[0] ) is instant; it doesn't require any searching, because the runtime of the languages knows exactly where to find this value.
 
