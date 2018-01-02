@@ -24,9 +24,9 @@ Deletion | O(1) | O(n)
 
 The Hash-function takes a key and converts it to a number which will be the index at which to store it. In my ``hash()`` function below, I am computing a hash value by summing the ASCII value of each character of the string (the argument passed-in) using the JavaScript function ``charCodeAt()`` to return a character’s ASCII value after multiplying the ASCII value by a multiplier H, which in this case, is an odd prime 37. And the reason to choose 37 being, by some empirical research, if we take over 50,000 English words (formed as the union of the word lists provided in two variants of Unix), using the constants 31, 33, 37, 39, and 41 will produce less than 7 collisions in each case, while creating a hasing function.
 
-Note that this remainder method (modulo arithmetic) will typically be present in some form in all hash functions, since the result must be in the range of slot names. In the below cae (total %= this.table.length). Because, the hash function will turn its passed-in argument and return an integer in the range of slot names, between 0 and m-1.
+Note that some form of remainder method (modulo arithmetic) will typically be present in all hash functions, since the result must be in the range of slot names. In the below cae (total %= this.table.length). Because, the hash function will turn its passed-in argument and return an integer in the range of slot names, between 0 and m-1.
 
-So, effectively, the hash function changes the passed in argument to a number. so that they can be used as array index. So, if I want to save my name "Paul", just convert this name to integer first. In a super simplied form it will work as below...
+So, effectively, the hash function changes the passed in argument to a number. so that they can be used as array index. So, if I want to save my name "Paul", just convert this name to integer first with some kind of of hashing formulae. In a super simplied form it will work as below...
 
 ```
 
