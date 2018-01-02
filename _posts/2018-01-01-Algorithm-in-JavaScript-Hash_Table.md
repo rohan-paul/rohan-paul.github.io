@@ -22,7 +22,9 @@ Deletion | O(1) | O(n)
 
 **Hash Function**
 
-The Hash-function takes a key and converts it to a number which will be the index at which to store it. Output of the hash function is an array of key-value pairs, storing each pair at a numeric index. In my ``hash()`` function below, I am computing a hash value by summing the ASCII value of each string (the argument passed-in) using the JavaScript function ``charCodeAt()`` to return a character’s ASCII value after multiplying the ASCII code by a multiplier H, which in this case, is an odd prime 37. And the reason to choose 37 being, by some empirical research, if we take over 50,000 English words (formed as the union of the word lists provided in two variants of Unix), using the constants 31, 33, 37, 39, and 41 will produce less than 7 collisions in each case, while creating a hasing function.
+The Hash-function takes a key and converts it to a number which will be the index at which to store it. In my ``hash()`` function below, I am computing a hash value by summing the ASCII value of each character of the string (the argument passed-in) using the JavaScript function ``charCodeAt()`` to return a character’s ASCII value after multiplying the ASCII value by a multiplier H, which in this case, is an odd prime 37. And the reason to choose 37 being, by some empirical research, if we take over 50,000 English words (formed as the union of the word lists provided in two variants of Unix), using the constants 31, 33, 37, 39, and 41 will produce less than 7 collisions in each case, while creating a hasing function.
+
+Note that this remainder method (modulo arithmetic) will typically be present in some form in all hash functions, since the result must be in the range of slot names. In the below cae (total %= this.table.length). Because, the hash function will turn its passed-in argument and return an integer in the range of slot names, between 0 and m-1.
 
 So, effectively, the hash function changes the passed in argument to a number. so that they can be used as array index. So, if I want to save my name "Paul", just convert this name to integer first. In a super simplied form it will work as below...
 
@@ -57,9 +59,6 @@ In order to insert a value inside our buckets, i.e. insert a key “x” with th
 
 ```
 
-
-
-
 **Collision-Resolution**
 
 Even with an efficient hash function, it is possible for two keys to hash (the result of the hash function) to the same value. This is called a collision, and we need a strategy for handling collisions when they occur. In my implementation below, this is taken care of by the ``put()`` function. The ``put()`` function receives the array index value from the ``hash()`` function and stores the ``data`` element in that position. But only after checking that after the k``key`` value is hased (with the ``hash()`` function) there's no collison. And this can be done in two ways - **separate chaining** and **linear probing** (both have been implemented in the below code).
@@ -70,7 +69,7 @@ Even with an efficient hash function, it is possible for two keys to hash (the r
 <script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
 
 
-**Some very simple application of HashTable in solving common problems**
+**Some very simple application of associative-arrays (non-hashed) in solving common problems**
 <p data-height="982" data-theme-id="0" data-slug-hash="aEWerb" data-default-tab="js" data-user="rohanpaul" data-embed-version="2" data-pen-title="aEWerb" class="codepen">See the Pen <a href="https://codepen.io/rohanpaul/pen/aEWerb/">aEWerb</a> by Rohan Paul (<a href="https://codepen.io/rohanpaul">@rohanpaul</a>) on <a href="https://codepen.io">CodePen</a>.</p>
 <script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
 
@@ -99,7 +98,7 @@ I would opine, every object in JavaScript IS a hash. This is a hash of object's 
 
 **Why I need a hashtable instead of just a non-hashed associative array, which definitely will be simpler to implement**
 
-When using a hashtable, I compute the hash code of a given key to find the associated value. The hashcode is an index in the underlying array of the hashtable. This means that finding a key in a hashtable is as fast as accessing an array by index. So, while searching, the hash table mechanism gives me O(1) performance for any given key search. Accessing an array with an index (e.g. myArray[0] ) is instant; it doesn't require any searching, because the runtime of the languages knows exactly where to find this value.
+When using a hashtable, I compute the hash code of a given key to find the associated value. The hashcode is an index in the underlying array of the hashtable. This means that finding a key in a hashtable is as fast as accessing an array by index. So, while searching, the hash table mechanism gives me O(1) performance for any given key search, since a constant amount of time is required to compute the hash value and then index the hash table at that location. Accessing an array with an index (e.g. myArray[0] ) is instant; it doesn't require any searching, because the runtime of the languages knows exactly where to find this value.
 
  
 And if I do not use a HashTable, I still need some sort of search mechanism. And if I choose, Binary Search Tree, it's  O(log n) not O(1). And if I don't have a search mechanism at all (i.e. I am searching the entire array from top to bottom to find my key), my performance is O(n).
