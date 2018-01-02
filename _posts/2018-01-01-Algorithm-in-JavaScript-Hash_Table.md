@@ -24,6 +24,40 @@ Deletion | O(1) | O(n)
 
 The Hash-function takes a key and converts it to a number which will be the index at which to store it. Output of the hash function is an array of key-value pairs, storing each pair at a numeric index. In my ``hash()`` function below, I am computing a hash value by summing the ASCII value of each string (the argument passed-in) using the JavaScript function ``charCodeAt()`` to return a character’s ASCII value after multiplying the ASCII code by a multiplier H, which in this case, is an odd prime 37. And the reason to choose 37 being, by some empirical research, if we take over 50,000 English words (formed as the union of the word lists provided in two variants of Unix), using the constants 31, 33, 37, 39, and 41 will produce less than 7 collisions in each case, while creating a hasing function.
 
+So, effectively, the hash function changes the passed in argument to a number. so that they can be used as array index. So, if I want to save my name "Paul", just convert this name to integer first. In a super simplied form it will work as below...
+
+```
+
+To insert "Paul":
+
+var k = hashFunc("Paul");
+
+arr[k] = "Paul" // this takes O(1) time
+
+
+Lookup for Paul:-
+
+var k = hashFunc("Paul") ;
+
+var name = arr[k] ;
+
+console.log(name);  //prints alice 
+
+```
+
+Hash table is like a bucket, represented as an empty array initially. When initializing the hash table we create an array containing a fixed number of these buckets.
+
+```
+var allBuckets = [[], [], [], []] 
+
+In order to insert a value inside our buckets, i.e. insert a key “x” with the value 10
+
+1. Use has function to get bucket index
+3. Push key-value pair into bucket 
+
+```
+
+
 
 
 **Collision-Resolution**
@@ -42,6 +76,22 @@ Even with an efficient hash function, it is possible for two keys to hash (the r
 
 <p data-height="426" data-theme-id="0" data-slug-hash="ZvyGQd" data-default-tab="js" data-user="rohanpaul" data-embed-version="2" data-pen-title="hash_implement_removeDuplicate.js" class="codepen">See the Pen <a href="https://codepen.io/rohanpaul/pen/ZvyGQd/">hash_implement_removeDuplicate.js</a> by Rohan Paul (<a href="https://codepen.io/rohanpaul">@rohanpaul</a>) on <a href="https://codepen.io">CodePen</a>.</p>
 <script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
+
+
+<p data-height="1500" data-theme-id="0" data-slug-hash="baRRyp" data-default-tab="js" data-user="rohanpaul" data-embed-version="2" data-pen-title="google-interview_bizTrip.js" class="codepen">See the Pen <a href="https://codepen.io/rohanpaul/pen/baRRyp/">google-interview_bizTrip.js</a> by Rohan Paul (<a href="https://codepen.io/rohanpaul">@rohanpaul</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+<script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
+
+**Measuring performance**
+
+Lets design a test that generates 100,000 keys and values, then measures how long it takes to insert (``put()``) and then read (``get()``) them from the hash table.
+I took the ``makeid`` function from [StackOverflow](https://stackoverflow.com/a/1349426/1902852) that would generate 100,000 character string composed of characters picked randomly from the set [a-zA-Z0-9].
+I use ``console.time`` and ``console.timeEnd`` to measure how fast our hash table is.
+
+
+<p data-height="694" data-theme-id="0" data-slug-hash="eyRRqy" data-default-tab="js" data-user="rohanpaul" data-embed-version="2" data-pen-title="hashTable_performance.js" class="codepen">See the Pen <a href="https://codepen.io/rohanpaul/pen/eyRRqy/">hashTable_performance.js</a> by Rohan Paul (<a href="https://codepen.io/rohanpaul">@rohanpaul</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+<script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
+
+And it looks like the **Linear Probing technique** runs much faster.
 
 **The great confusion about Hash vs Objects in JavaScript**
 
