@@ -15,8 +15,9 @@
 
 	article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
 		display: block;
+		margin:0em;
 	}
-
+	
 	body {
 		line-height: 1;
 	}
@@ -238,7 +239,7 @@
 	}
 
 	.row.uniform > * > :last-child {
-		margin-bottom: 0;
+		margin-bottom: -20px;
 	}
 
 	.row.\30 \25 > * {
@@ -1587,6 +1588,7 @@
 	strong, b {
 		color: #060C06;
 		font-weight: 800;
+
 	}
 
 	em, i {
@@ -1594,7 +1596,10 @@
 	}
 
 	p {
-		margin: 0 0 2em 0;
+		margin-top: 10px;
+	    margin-bottom: 10px;
+	    margin-right: 0;
+	    margin-left: 0;			
 	}
 
 	h1, h2, h3, h4, h5, h6 {
@@ -1938,14 +1943,14 @@
 	.box {
 		border-radius: 0.35em;
 		border: solid 2px #efefef;
-		margin-bottom: 2em;
+		margin-bottom: -20px;
 		padding: 1.5em;
 	}
 
 		.box > :last-child,
 		.box > :last-child > :last-child,
 		.box > :last-child > :last-child > :last-child {
-			margin-bottom: 0;
+			margin-bottom: -20px;
 		}
 
 		.box.alt {
@@ -2172,7 +2177,7 @@
 				}
 
 				ul.actions.vertical li > * {
-					margin-bottom: 0;
+					margin-bottom: -20px;
 				}
 
 			ul.actions.vertical.small li {
@@ -2197,7 +2202,7 @@
 				}
 
 					ul.actions.fit li > * {
-						margin-bottom: 0;
+						margin-bottom: -20px;
 					}
 
 				ul.actions.fit.small {
@@ -2476,6 +2481,7 @@
 
 		#header strong, #header b {
 			color: #ffffff;
+			margin-bottom: -20px;
 		}
 
 		#header h2, #header h3, #header h4, #header h5, #header h6 {
