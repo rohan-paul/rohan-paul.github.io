@@ -18,7 +18,7 @@ If you’re interviewing for developer position, one of the more intimidating qu
 
 3. Repeat steps 1 and 2 on both the smaller and larger list. That is, Recursively apply the above steps to the sub-array of elements with smaller values and separately to the sub-array of elements with greater values.
 
-Below is a basic implementation without usuing swap function and partition function.
+Below is a basic implementation without usuing **swap function** and **partition function**.
 
 <p data-height="985" data-theme-id="0" data-slug-hash="KZooPm" data-default-tab="js" data-user="rohanpaul" data-embed-version="2" data-pen-title="quick-sort-basic.js" class="codepen">See the Pen <a href="https://codepen.io/rohanpaul/pen/KZooPm/">quick-sort-basic.js</a> by Rohan Paul (<a href="https://codepen.io/rohanpaul">@rohanpaul</a>) on <a href="https://codepen.io">CodePen</a>.</p>
 <script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
@@ -80,3 +80,5 @@ Hoare's scheme is more efficient than Lomuto's partition scheme because it does 
 Both algorithms use two pointers into the array that scan it sequentially. Therefore both behave almost optimal w.r.t. caching.
 
 On an array that is already sorted, Hoare's method never swaps, as there are no misplaced pairs, whereas Lomuto's method still does its roughly n/2 swaps.
+
+While researching for this blog, found this beautiful site showing all [sorting algorithms with Animation](https://www.toptal.com/developers/sorting-algorithms/).
