@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Linked List Algorithm in JavaScript-Remove n-th element
+title: Linked List Algorithm in JavaScript-Remove n-th node
 comments: true
 author: Rohan Paul
 categories: JavaScript
