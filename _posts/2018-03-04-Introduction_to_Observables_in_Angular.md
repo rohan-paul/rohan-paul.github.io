@@ -22,7 +22,7 @@ Observables, makes JavaScript as a language implement the [observer design patte
 
 **Lets go through a quick example by creating a basic observable**
 
-Lets say, I am building a messenger / chat app, and for the discussion in this article, I am taking only two relevant components, one is ``MessageService`` (which holds the basic methods for adding, deleting or editing individual messages) and this ``MessageService`` component that will be injected into the other component named ``MessageInput`` component.
+Lets say, I am building a messenger / chat app, and for the discussion in this article, I am taking only two relevant components, one is ``MessageService``, which holds the basic methods for adding, deleting or editing individual messages. And this ``MessageService`` component will be injected into a second component named ``MessageInput`` component.
 
 **So, below is the code in MessageService component.**
 
