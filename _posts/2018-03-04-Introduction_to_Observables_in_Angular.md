@@ -8,7 +8,7 @@ categories: Angular
 <img src="/images/fulls/Observable-in-Angular.jpeg" class="fit image">
 
 
-**What Are Observables in Angular?**
+## What Are Observables in Angular?
 
 
 Observables in short handles asynchronous processing and events. So, in a way, observables = promises + events.
