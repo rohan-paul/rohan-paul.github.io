@@ -10,7 +10,7 @@ categories: Coding-Bootczmp
 
 ## Bootcamp: Day 1
 
-Monday 26th March — The Hacking School's March-2018-B cohort. The day some ten of us embark on a great journey for the next 13 intensive weeks with the dream and hope of becoming pro-web-application developers in MEAN and MERN stack.
+**Monday 26th March** — The Hacking School's March-2018-B cohort. The day some ten of us embark on a great journey for the next 13 intensive weeks with the dream and hope of becoming pro-web-application developers in MEAN and MERN stack.
 
 Welcome to the weird, wonderful world of coding bootcamps, where a bunch of passionate guys dive headfirst into Javascript, React, Algorithm & Data Structure, through a super-accelerated computer science programs with the aim of shaking up their life and gaining the arms and ammunition (knowledge) in an industry, that is desperately in need of these warriors.
 
@@ -32,7 +32,7 @@ The rest of us also shared about who we are, and our expectation about coding bo
 <img src="/images/fulls//bootcamp-day-1/7.jpg" class="fit image">
 
 
-After an hour for lunch when few of us made good use of Hyderabadi Dum Biryani, we got back to desks with a full on speed on HTTP architechture, requests-response cycle, classification of IP addresses, concepts of Port Numbers (how its represented by an integer value between 0 and 65,535) and how this knowledge will make sense of whats happening when we structure an MEAN / MERN stack app and set up an node server.
+After an hour for lunch when few of us made good use of Hyderabadi Dum Biryani, we got back to desks with a full on speed on HTTP architechture, requests-response cycle, classification of IP addresses, concepts of Port Numbers (how its represented by an integer value between 0 and 65,535) and how this fundametal knowledge will all make sense of whats happening under the hood, when we structure a MEAN / MERN stack app and set up a node server.
 
 Bootcamps are deliberately intensive environments. We are learning a complex and fiercely intimidating subject within a very short amount of time. Things change fast. But things in the Javascript and web-technology space change ridiculously fast. So I only hope to keep my head above the water over the next coming weeks & months, and keep moving forward with the next set of **"if-else"** statements...
 
