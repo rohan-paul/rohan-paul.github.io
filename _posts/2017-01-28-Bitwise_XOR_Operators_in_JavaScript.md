@@ -7,7 +7,7 @@ categories: JavaScript
 ---
 <img src="/images/fulls/XOR-Operator.jpg" class="fit image">
 
-Writing this post about bitwise XOR operator while I was solving a challenge or "Kata" as they call each challenge at [CodeWars](https://www.codewars.com/kata/find-the-odd-int) (the great site for coding challanges and getting a global peer rank). Lets refer directly to the problem (the below gist) along with my solution, so we can see how beautifully and efficently the XOR operatior could solve the same.
+Writing this post about bitwise XOR operator while I was solving a challenge or "Kata" as they call each challenge at [CodeWars](https://www.codewars.com/kata/find-the-odd-int) (the great site for coding challenges and getting a global peer rank). Lets refer directly to the problem (the below gist) along with my solution, so we can see how beautifully and efficiently the XOR operator could solve the same.
 
 <script src="https://gist.github.com/rohan-paul/72c4b31c6394f5fe0539a3811583e568.js"></script>
 
@@ -73,3 +73,19 @@ Now if 44millisecond sounds too insignificant you should read about (from a 2008
 <script src="https://gist.github.com/rohan-paul/bac5818a64b1c3aafd2554c6601e5ad4.js"></script>
 
 However, to remember here, this methodology only really works if one and only one unique value is appearing an odd number of times.
+
+Lets look at a rather simpler use case of ``XOR`` operator for swapping 2 given numbers with each other.
+
+<p data-height="383" data-theme-id="0" data-slug-hash="XEoPPb" data-default-tab="js" data-user="rohanpaul" data-embed-version="2" data-pen-title="XEoPPb" class="codepen">See the Pen <a href="https://codepen.io/rohanpaul/pen/XEoPPb/">XEoPPb</a> by Rohan Paul (<a href="https://codepen.io/rohanpaul">@rohanpaul</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+
+**Explanation of swapNumberXOR()**
+
+
+ A> XOR converts their operands to 32-bit integers (i.e. zeroes and ones), then perform their operations on such binary representations.
+
+ B> So in the above example > 2 and 4 in binary representation are 10 (which is same as 010) and 100 respectively. So a ^ b means 010 ^ 100 ie. ( 0 ^ 1 ) for first position then ( 1 ^ 0 ) for second position and ( 0 ^ 0 ) for the third position. Which gives "1 1 0" . So with the line of code a ^= b , I am assigning a's value to be "100" which is the decimal 6.
+
+C> Then With the next line ( b^= a ) means 6 ^ 4 i.e. ( 110 ^ 100 ) giving me 010 which is 2
+
+And then finally with (a ^= b ) means 6 ^ 2 ie. ( 110 ^  010) giving me 100 which 4.
