@@ -74,7 +74,7 @@ Now if 44millisecond sounds too insignificant you should read about (from a 2008
 
 However, to remember here, this methodology only really works if one and only one unique value is appearing an odd number of times.
 
-Lets look at a rather simpler use case of ``XOR`` operator for swapping 2 given numbers with each other.
+**Lets look at a rather another and more simpler use case of ``XOR`` operator for swapping 2 given numbers with each other.**
 
 <p data-height="383" data-theme-id="0" data-slug-hash="XEoPPb" data-default-tab="js" data-user="rohanpaul" data-embed-version="2" data-pen-title="XEoPPb" class="codepen">See the Pen <a href="https://codepen.io/rohanpaul/pen/XEoPPb/">XEoPPb</a> by Rohan Paul (<a href="https://codepen.io/rohanpaul">@rohanpaul</a>) on <a href="https://codepen.io">CodePen</a>.</p>
 <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
