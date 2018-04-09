@@ -131,6 +131,7 @@ The CallStack holds a list of functions that have been called to run our code up
 
 **To actually view Call Stack in Chrome Developer Tool**
 
+
 Run your code file `( the .js or the .html file )` in a browser. If you are using the chrome web browser, bring up Chrome developer tools by pressing F12. All other major browser vendors have their own built-in developer tools. On the top tab, you will see menu labels such as Elements, Profiles, Console, Network, Sources, etc. Click on **Sources**. 
 
 
