@@ -76,7 +76,7 @@ However, to remember here, this methodology only really works if one and only on
 
 **Lets look at a rather another and more simpler use case of ``XOR`` operator for swapping 2 given numbers with each other.**
 
-<p data-height="383" data-theme-id="0" data-slug-hash="XEoPPb" data-default-tab="js" data-user="rohanpaul" data-embed-version="2" data-pen-title="XEoPPb" class="codepen">See the Pen <a href="https://codepen.io/rohanpaul/pen/XEoPPb/">XEoPPb</a> by Rohan Paul (<a href="https://codepen.io/rohanpaul">@rohanpaul</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+<p data-height="265" data-theme-id="0" data-slug-hash="EEzmJP" data-default-tab="js" data-user="rohanpaul" data-embed-version="2" data-pen-title="XOR-blog" class="codepen">See the Pen <a href="https://codepen.io/rohanpaul/pen/EEzmJP/">XOR-blog</a> by Rohan Paul (<a href="https://codepen.io/rohanpaul">@rohanpaul</a>) on <a href="https://codepen.io">CodePen</a>.</p>
 <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
 
 **Explanation of swapNumberXOR()**
