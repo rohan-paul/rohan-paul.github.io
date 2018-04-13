@@ -5,8 +5,7 @@ comments: true
 author: Rohan Paul
 categories: Coding-Bootczmp
 ---
-<img src="/images/fulls/Promises-in-JavaScript.jpeg" class="fit image">
-
+<img src="/images/fulls/Matrix-Sum-diagonals-Blog-1.jpg" class="fit image">
 
 
 **Problem Statement - Given a square matrix of numbers ( i.e. an array of arrays, in other words, a 2D matrix of numbers), write a function to get the sum of the 2 diagonals.**
@@ -20,7 +19,7 @@ let matrix = [
 
 That is, in a 2-D form, the matrix is - [ [1, 2, 3], [4, 5, 6], [7, 8, 9] ]; // And the diagonal sum function should output 15, 15
 
-I came out with the below solution, that works in O(n) time, as, although the array is a 2-D one, I am traversing the array only once to access the relevant diagonal's element numbers.
+I came up with the below solution, that works in O(n) time because, although the array is a 2-D one, I am traversing the array only once to access the relevant diagonal's element numbers.
 
 <p data-height="391" data-theme-id="0" data-slug-hash="zWQwRO" data-default-tab="js" data-user="rohanpaul" data-embed-version="2" data-pen-title="matrixDiagonalSums-blog" class="codepen">See the Pen <a href="https://codepen.io/rohanpaul/pen/zWQwRO/">matrixDiagonalSums-blog</a> by Rohan Paul (<a href="https://codepen.io/rohanpaul">@rohanpaul</a>) on <a href="https://codepen.io">CodePen</a>.</p>
 <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
@@ -29,21 +28,22 @@ I came out with the below solution, that works in O(n) time, as, although the ar
 
 **For diagonal1**
 
-A> For above matrix, the diagonal1 is [1, 5, 9] . So I am accessing the first element (i.e. 1) of diagonal1 > which is matrix[row1][row1] >
-which is matrix[1st element of outer array][first element of inner array]  > in code which is matrix[0][0] .
+A> For above matrix, the diagonal1 is [1, 5, 9] . So I am accessing the first element (i.e. 1) of diagonal1 > which is ``matrix[row0][row0]`` >
 
-Note that because its a square matrix, the outerArray.length == innerArray.length
+which is ``matrix[1st element of outer array][first element of inner array]``  > in JS code which is ``matrix[0][0]`` .
 
-Hence to access the first element position of the inner array, and the innerArray being the first element of the outer array, I just do matrix[0][0]
+Note that because its a square matrix, the ``outerArray.length == innerArray.length``
 
-B> The second element (i.e. 5) > which is matrix[2nd element of outer array][2nd element of inner array] > in JS code this is matrix[1][1]
+Hence to access the first element position of the inner array, and the innerArray being the first element of the outer array, I just do ``matrix[0][0]``
 
-So in similar way, starting from row index = 0, each element of the diagonal1 would be matrix[row][row].
+B> The second element (i.e. 5) > which is ``matrix[2nd element of outer array][2nd element of inner array]`` > in JS code this is matrix[1][1]
+
+So in similar way, starting from **row index = 0**, each element of the diagonal1 would be ``matrix[row][row]``.
 
 So the general rule, for getting the elements of diagonal, I am incrementing both the positional values of the outer and inner array by one with each loop.
 
 
-**Now for diagonal2**
+**For diagonal2**
 
 **A>** The diagonal2 is ``[3, 5, 7]``. So I am accessing the first element (3) >
 
@@ -65,6 +65,17 @@ So the general rule, for getting the elements of diagonal, with each loop, I am 
 
 So for the diagonal2, for the innerArray, the problem is of finding the element position from the last element towards left, i.e. looping the array from reverse position.
 
+So overall my for loop iterations will give me the below index values for diagonal-2:
+
+```
+matrix.length = 3, i = 0 => we get the element (0, 3 — 0 — 1) = (0, 2)
+
+matrix.length = 3, i = 1 => we get the element (1, 3 — 1 — 1) = (1, 1)
+
+matrix.length = 3, i = 2=> we get the element (2, 3 — 2 — 1) = (2, 0)
+```
+
+
 **Explanation of the part ``matrix[row][matrix.length - row - 1]``**
 
 A> Generally whenever, I have reverse-loop an array (like in the more general problems of reversing an array), starting from its last element, I do this
@@ -79,4 +90,15 @@ B> Then for the second loop, index-value (i.e. row value in this specific proble
 
 C> And this way, for the last loop, I will be accessing ``array[(array.length - (length-1) - 1]`` element, i.e. the ``array[0]`` position's element of the original array.
 
-	
+So, the following pseudo code for this problem would make more sense now.
+
+
+1. Condition for Diagonal-1: The row-column condition is row = column.
+
+2. Condition for Diagonal-2: The row-column condition is row = numberOfRows-column -1
+
+
+And now just take a look at a sub-optimal solution in O(n^2) traversing 2 loops
+
+<script src="https://gist.github.com/rohan-paul/4533359459a1dca4ad22b8881222bd9e.js"></script>
+
