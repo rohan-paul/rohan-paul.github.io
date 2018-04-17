@@ -185,7 +185,8 @@ F(6) = 5 + 3 = 8
 
 F(7) = 8 + 5 = 13
 
-<p data-height="213" data-theme-id="0" data-slug-hash="BxBqEp" data-default-tab="js" data-user="rohanpaul" data-embed-version="2" data-pen-title="recursion-blog-fibonacci" class="codepen">See the Pen <a href="https://codepen.io/rohanpaul/pen/BxBqEp/">recursion-blog-fibonacci</a> by Rohan Paul (<a href="https://codepen.io/rohanpaul">@rohanpaul</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+
+<p data-height="336" data-theme-id="0" data-slug-hash="BxBqEp" data-default-tab="js" data-user="rohanpaul" data-embed-version="2" data-pen-title="recursion-blog-fibonacci" class="codepen">See the Pen <a href="https://codepen.io/rohanpaul/pen/BxBqEp/">recursion-blog-fibonacci</a> by Rohan Paul (<a href="https://codepen.io/rohanpaul">@rohanpaul</a>) on <a href="https://codepen.io">CodePen</a>.</p>
 <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
 
 
