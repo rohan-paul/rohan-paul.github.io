@@ -147,6 +147,12 @@ The CallStack holds a list of functions that have been called to run our code up
 <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
 
 
+**Example-8: Calculate the logarithm of a number with a base of 2**
+
+<p data-height="654" data-theme-id="0" data-slug-hash="OZLvGZ" data-default-tab="js" data-user="rohanpaul" data-embed-version="2" data-pen-title="recursion-blog-calculate-logbase2" class="codepen">See the Pen <a href="https://codepen.io/rohanpaul/pen/OZLvGZ/">recursion-blog-calculate-logbase2</a> by Rohan Paul (<a href="https://codepen.io/rohanpaul">@rohanpaul</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+
+
 
 **To actually view Call Stack in Chrome Developer Tool**
 
