@@ -159,9 +159,10 @@ The Rule is . In general, fibonnaci(n) = fibonnaci(n - 2) + fibonnaci(n - 1). By
 In the below solution I am assuming, the series starts with zero. That is, fibonacci(0) should return 0, not 1. If however, I wanted the series to start from 1, I would put the first condtion as if (n < 2) { return 1 }
 So the final series will look like below.
 
-n =	    0	1	2	3	4	5	6	7	8	9	10	11	12	13	14	...
 
-xn =	0	1	1	2	3	5	8	13	21	34	55	89	144	233	377	...
+<p data-height="142" data-theme-id="0" data-slug-hash="zjOMEV" data-default-tab="js" data-user="rohanpaul" data-embed-version="2" data-pen-title="zjOMEV" class="codepen">See the Pen <a href="https://codepen.io/rohanpaul/pen/zjOMEV/">zjOMEV</a> by Rohan Paul (<a href="https://codepen.io/rohanpaul">@rohanpaul</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+
 
 f(7) = F(6) + F(5);
 
