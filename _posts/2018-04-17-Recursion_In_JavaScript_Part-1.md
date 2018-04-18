@@ -78,6 +78,29 @@ And note that in the code above I dont need to test the second parameter to see 
 <p data-height="335" data-theme-id="0" data-slug-hash="QMNbGM" data-default-tab="js" data-user="rohanpaul" data-embed-version="2" data-pen-title="factorial_recursive.js" class="codepen">See the Pen <a href="https://codepen.io/rohanpaul/pen/QMNbGM/">factorial_recursive.js</a> by Rohan Paul (<a href="https://codepen.io/rohanpaul">@rohanpaul</a>) on <a href="https://codepen.io">CodePen</a>.</p>
 <script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
 
+**Complexity of recursive factorial program**
+
+First lets, see the same factorial function written using plain loops
+
+```
+function factorial (num) {
+  let result = 1;
+  for (var i = 0; i < num; i++) {
+    result = result * (num - i);
+  }
+  return result;
+}
+```
+
+To compare the performance of the 2 approach, I wrote this quick script and see that the recursive solution is way faster than the looping solution.
+
+<p data-height="654" data-theme-id="0" data-slug-hash="deyYyb" data-default-tab="js" data-user="rohanpaul" data-embed-version="2" data-pen-title="deyYyb" class="codepen">See the Pen <a href="https://codepen.io/rohanpaul/pen/deyYyb/">deyYyb</a> by Rohan Paul (<a href="https://codepen.io/rohanpaul">@rohanpaul</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+
+
+The algorithm is linear, running in O(n) time. This is the case because it executes once every time it decrements the value n, and it decrements the value n until it reaches 0, meaning the function is called recursively n times. This is assuming, of course, that both decrementation and multiplication are constant operations.
+
+
 **Example-4: A scarry looking one, calculating the value of $\pi$ using the [Wallis Product](https://en.wikipedia.org/wiki/Wallis_product) series**
 
 
@@ -220,3 +243,5 @@ After each time I click the **Stepping Into** button with my ``mult(-4, 5)`` fun
 <img src="/images/fulls/Chrome-Debug-Tools-Call_Stack-1.png" class="fit image">
 
 When working on recursive function, examining the call stack by stepping into each function call via a debugging tool is something you can not avoid, so better get aquainted with these tools at an early stage.
+
+
