@@ -94,7 +94,7 @@ function factorial (num) {
 
 To compare the performance of the 2 approach, I wrote this quick script and see that the recursive solution is way faster than the looping solution.
 
-<p data-height="654" data-theme-id="0" data-slug-hash="deyYyb" data-default-tab="js" data-user="rohanpaul" data-embed-version="2" data-pen-title="deyYyb" class="codepen">See the Pen <a href="https://codepen.io/rohanpaul/pen/deyYyb/">deyYyb</a> by Rohan Paul (<a href="https://codepen.io/rohanpaul">@rohanpaul</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+<p data-height="369" data-theme-id="0" data-slug-hash="jxqeQX" data-default-tab="js" data-user="rohanpaul" data-embed-version="2" data-pen-title="recursion-1-blog" class="codepen">See the Pen <a href="https://codepen.io/rohanpaul/pen/jxqeQX/">recursion-1-blog</a> by Rohan Paul (<a href="https://codepen.io/rohanpaul">@rohanpaul</a>) on <a href="https://codepen.io">CodePen</a>.</p>
 <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
 
 
