@@ -31,7 +31,7 @@ which matahematically simplifies to n! / (n - r)!
 
 In our below problem, I am trying to find the permutation of n elements of an array taking all the n at a time, so the result is **!n**
 
-There are many ways to solver, but per [Wikipedia article on Heap's Algorithm](https://en.wikipedia.org/wiki/Heap's_algorithm) : "In a 1977 review of permutation-generating algorithms, Robert Sedgewick concluded that it was at that time the most effective algorithm for generating permutations by computer". The algorithm is a pretty famous one but even after some try, for me it remained non-intutive. So here, in this post, I am only only trying to document my implementation step. Feel free to go through the original [paper](https://academic.oup.com/comjnl/article/6/3/293/360213)
+There are many ways to solve, but per [Wikipedia article on Heap's Algorithm](https://en.wikipedia.org/wiki/Heap's_algorithm) : "In a 1977 review of permutation-generating algorithms, Robert Sedgewick concluded that it was at that time the most effective algorithm for generating permutations by computer". The algorithm is a pretty famous one but even after some try, for me it remained non-intutive. So here, in this post, I am only trying to document my implementation step. Feel free to go through the original [paper](https://academic.oup.com/comjnl/article/6/3/293/360213)
 
 
 
@@ -111,4 +111,12 @@ So, the key technique of Heap's algo is the clever way to keep track of which el
  A> If n is odd, then swap the ith element, where i is the counter starting from 0 and the last element and repeat the algorithm till i is less than or equal to n.
 
  B> And if n is even, swap the first and last element.
+
+ **How the stack works to build up the Permutation**
+
+  We start by defining i and assigning the value 0 to it. We continue to check if it satisfies the condition of the for loop. If it does we step into the loop and execute the first line inside the loop which is the recursive call `permutationHeap(array, result, n-1)` .
+
+  Inside the recursive call we have a new stack frame which has no knowledge of the i variable we defined before executing the recursive call, because it is a local variable. So when we get to the loop in the new call we define a new variable i, assigning it 1 (as I am making it to be 1-indexed array) at first and incrementing it as the loop repeats in this stack frame/call instance. When this call finishes we delete the stack frame and resume to the previous stack frame (the one we started with) where i=1 still, and we continue to the next line. 
+
+  All the calls have access to the array since the function is defined in the same scope as the variables `(inside the function permutationHeap)` so within each call - no matter what the stack frame we are in, the changes made to those are made to the same instances.
 
