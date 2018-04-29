@@ -4,7 +4,7 @@ title: Implemetning Heap Algorithm to Find Permutation of a set of Numbers
 comments: true
 author: Rohan Paul
 categories: JavaScript
-use_math : true
+use_math : false
 ---
 <img src="/images/fulls/Heap-algo-Permutation.jpg" class="fit image">
 
@@ -116,7 +116,7 @@ So, the key technique of Heap's algo is the clever way to keep track of which el
 
   We start by defining i and assigning the value 0 to it. We continue to check if it satisfies the condition of the for loop. If it does we step into the loop and execute the first line inside the loop which is the recursive call `permutationHeap(array, result, n-1)` .
 
-  Inside the recursive call we have a new stack frame which has no knowledge of the i variable we defined before executing the recursive call, because it is a local variable. So when we get to the loop in the new call we define a new variable i, assigning it 1 (as I am making it to be 1-indexed array) at first and incrementing it as the loop repeats in this stack frame/call instance. When this call finishes we delete the stack frame and resume to the previous stack frame (the one we started with) where i=1 still, and we continue to the next line. 
+  Inside the recursive call we have a new stack frame which has no knowledge of the i variable we defined before executing the recursive call, because it is a local variable. So when we get to the loop in the new call we define a new variable i, assigning it 1, (as I am making it to be 1-indexed array) at first and incrementing it as the loop repeats in this stack frame/call instance. When this call finishes we delete the stack frame and resume to the previous stack frame (the one we started with) where i=1 still, and we continue to the next line. 
 
   All the calls have access to the array since the function is defined in the same scope as the variables `(inside the function permutationHeap)` so within each call - no matter what the stack frame we are in, the changes made to those are made to the same instances.
 
