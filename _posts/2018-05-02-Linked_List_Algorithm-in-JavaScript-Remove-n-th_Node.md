@@ -24,7 +24,7 @@ Note: Given n will always be valid. Try to do this in one pass.
 
 **Solution Algorithm**
 
-However also have to say, this is definitely not the best solution, and there are indeed more efficient way to tackle this problem.
+However also have to say, this is definitely not the best solution, and there are indeed more efficient way to tackle this problem. Its a straightforward two-passes where I first detect the length of the linked list and the second pass is to delete its n-th node. 
 
 - **A>** In order to remove a node from a linked list, we need to find the node that is just before the node we want to remove. Once we find that node, we change its next property to no longer reference the removed node. But, the previous node is modified to point to the node after the removed node. So the key line of code will be
 
