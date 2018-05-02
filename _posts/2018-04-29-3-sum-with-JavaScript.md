@@ -91,7 +91,7 @@ Since the number array is sorted, the plan is to pull b and c closer together - 
 
 E> If I see that the result (sum of Triplets i.e a + b + c) is more than zero, I can decrement from right-most elements to reach zero.
 
-And if the result is less than zero, I increment the b (middle element in the triplet) elements value to react zero. Pictorially..
+And if the result is less than zero, I increment the b's (middle element in the triplet) value to reach zero. Pictorially..
 
 <img src="/images/fulls/3-sum-inside-the-post-image-2.png">
 
@@ -105,7 +105,7 @@ G> And ``a`` will only take values upto ``(nums.length - 3)`` as the last 2 valu
 <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
 
 
-And see the huge performance difference with the 3 approach soutions running the code for an aray with 2000 randomly generated elements.
+And see the huge performance difference with the 3 approaches to soution, running the code for an array with 2000 randomly generated elements.
 
 ```
 var arr = Array.from({length: 2000}, () => Math.floor(Math.random() * 3000));
