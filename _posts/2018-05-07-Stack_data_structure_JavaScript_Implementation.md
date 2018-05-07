@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Stack Data Structure-JavaScript Implementation @ Hacking School-5th-Week
+title: Stack Data Structure-JavaScript Implementation @ The Hacking School-5th-Week
 comments: true
 author: Rohan Paul
 categories: JavaScript
@@ -62,7 +62,7 @@ And thats why I don't, not until I know the value of factorial(3). When factoria
 
 <img src="/images/fulls/factorial-stack-blog.gif">
 
-Now lets look at a very well-known problem using stack, that given a set of parenthesis to determine if its matched i.e. each opening parenthesis has a corresponding closing parenthesis in the given string.
+**Now lets look at a very well-known problem using stack, that given a set of parenthesis to determine if its matched i.e. each opening parenthesis has a corresponding closing parenthesis in the given string.**
 
 <p data-height="885" data-theme-id="0" data-slug-hash="odopbM" data-default-tab="js" data-user="rohanpaul" data-embed-version="2" data-pen-title="parenthesis-match-stack-blog" class="codepen">See the Pen <a href="https://codepen.io/rohanpaul/pen/odopbM/">parenthesis-match-stack-blog</a> by Rohan Paul (<a href="https://codepen.io/rohanpaul">@rohanpaul</a>) on <a href="https://codepen.io">CodePen</a>.</p>
 <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
