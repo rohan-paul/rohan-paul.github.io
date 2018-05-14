@@ -36,14 +36,16 @@ From there, we assign a variable in our map's arguments to reference each value 
 
 **Example-2 : Passing props from Parent to Child**
 
-Lets workd through a extremely small app of making a profile page, taking a random image from http://lorempixel.com/. You can just copy-paste the code into an .html file and open with any browser and see the result
+Lets work through a extremely small app of making a profile page, taking a random image from [https://loremflickr.com/](https://loremflickr.com/). You can just copy-paste the code into an .html file and open with any browser and see the result
 
-The structure of our components are like this
+Implementation of a wrapper component (User) and under it 2 more components (Profile and Followers).
+
+The structure of my components are like this
 
 ```
-- App
+- User
     - Profile
-    - Hobbies
+    - Followers
 ```
 
 <p data-height="1252" data-theme-id="0" data-slug-hash="GvdPJo" data-default-tab="js" data-user="rohanpaul" data-embed-version="2" data-pen-title="GvdPJo" class="codepen">See the Pen <a href="https://codepen.io/rohanpaul/pen/GvdPJo/">GvdPJo</a> by Rohan Paul (<a href="https://codepen.io/rohanpaul">@rohanpaul</a>) on <a href="https://codepen.io">CodePen</a>.</p>
@@ -52,22 +54,24 @@ The structure of our components are like this
 Lets understand the below line of code in the above first
 
 ```
-ReactDOM.render(<App profileData={DATA} />, document.getElementById('root'));
+ReactDOM.render(<User profileData={DATA} />, document.getElementById('root'));
 ```
 
-This is how we specify where on the page we want the ``App`` component to be rendered. This is done by calling ``ReactDOM.render``, passing in the App component as the first argument and a reference to a ``div`` with the id of ``root`` as the second. So this entire app will go into this ``root`` div. Also note, how you pass the ``DATA`` into the App component, by simply changing a little bit on the ``ReactDOM.render`` method. And the curly brackets tells React that we’re escaping out of the JSX syntax in order to add a Javascript expression (``DATA``).
+This is how I specify where on the page (``window.document``) we want the ``User`` component to be rendered. This is done by calling ``ReactDOM.render``, passing in the User component as the first argument and a reference to a ``div`` with the id of ``root`` as the second. So this entire app will go into this ``root`` div. 
 
-And with the above line of code in ``ReactDOM.render`` now we’re able to access this data from within the App component through ``this.props.profileData`` . However, the App component is simply a wrapper around the ``Profile`` and ``Hobbies`` components, so we’re going to send the data further down the hierarchy, as a prop to the child by instantiating it within the parent. 
+Also note, I pass the ``DATA`` into the User component, by simply changing a little bit on the ``ReactDOM.render`` method. And the curly brackets tells React that we’re escaping out of the JSX syntax in order to add a Javascript expression (``DATA``).
+
+And with the above line of code in ``ReactDOM.render`` now we’re able to access this data from within the User component through ``this.props.profileData`` . However, the User component is simply a **wrapper** around the ``Profile`` and ``Follower`` components. We’re going to send the data further down the hierarchy, as a prop to the child by instantiating it within the parent. 
 
 <p data-height="320" data-theme-id="0" data-slug-hash="OjZrwj" data-default-tab="js" data-user="rohanpaul" data-embed-version="2" data-pen-title="OjZrwj" class="codepen">See the Pen <a href="https://codepen.io/rohanpaul/pen/OjZrwj/">OjZrwj</a> by Rohan Paul (<a href="https://codepen.io/rohanpaul">@rohanpaul</a>) on <a href="https://codepen.io">CodePen</a>.</p>
 <script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
 
-We instantiate three variables within the top-level ``App`` component; ``imgURL`` and ``name`` for ``Profile`` component, and only ``hobbyList`` for ``Hobbies`` component. This is because the ``Hobbies`` component doesn’t need the rest of the data; it’s simply going to display a list of hobbies.
+We instantiate three variables within the top-level ``User`` component; ``imgURL`` and ``name`` for ``Profile`` component, and only ``followerList`` for ``Followers`` component. This is because the ``Followers`` component doesn’t need the rest of the data; it’s simply going to display a list of followers.
 
-And then notice, inside the ``Profile`` component we fetch the data that we’ve passed down to it from ``App`` component by using ``this.props.name`` and ``this.props.imgURL``
+And then notice, inside the ``Profile`` component we fetch the data that we’ve passed down to it from ``Follower`` component by using ``this.props.name`` and ``this.props.imgURL``
 
 
-And in the ``Hobbie`` component, we’re looping through the hobbies array stored in ``this.props.hobbyList``
+And in the ``Followers`` component, we’re looping through the followers array stored in ``this.props.followerList``
 
 
 **Example-3 : Passing props from Parent to Child**
