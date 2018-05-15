@@ -8,9 +8,9 @@ categories: JavaScript
 <img src="/images/fulls/Create_React_App.jpeg" class="fit image">
 
 
-If you have struggled to set up a React Application from ground zero, you’ve probably know that starting a React project can be quite painful. Indeed, there is a lot of tools to know and to setup before even writing the first line of your actual application code.
+If you have struggled to set up a React Application from ground zero, you probably know that starting a React project can be quite painful. There's a lot of tools to know and configure before even writing the first line of your actual application code.
 
-And then came [create-react-app cli](https://github.com/facebookincubator/create-react-app) from the great React Engineering team at facebook, Dan Abramov and his friends. So lets try to know this powerful tool a little bit more.
+And then came [create-react-app cli](https://github.com/facebookincubator/create-react-app) from the great React Engineering team at facebook (currently led by Dan Abramov). So lets try to know this powerful tool a little bit more.
 
 First thing first, install the create-react-app (CRA) npm package, globally in your machine by running the following command:
 
@@ -18,35 +18,35 @@ First thing first, install the create-react-app (CRA) npm package, globally in y
  
 Now that we have the CLI installed globally, we can create our first React application:
 
-``create-react-app hello-world``
+``npx create-react-app hello-world``
  
-After a while, we’ll get an output like the following showing a list of commands we can run:
+After **CRA** installs all the packages, we’ll get an output like the following showing a list of commands we can run:
 
 <img src="/images/fulls/create-react-app-hello-world-terminal.png" height="370" width="600">
 
-And now we’ve got a nice and simple React application running at http://localhost:3000/. Open it in the browser.  It now also display the LAN address in addition to the localhost address so that we can quickly access the app from a mobile device on the same network.
+And now we’ve got a nice and simple React application running at ``http://localhost:3000/``. Open it in the browser.  It now also display the LAN address in addition to the localhost address so that we can quickly access the app from a mobile device on the same network.
 
-The project codes are pretty standard. Take a look athe the ./public/index.html file
+The project codes are pretty standard. Take a look at ``./public/index.html file``
 
 
 <p data-height="411" data-theme-id="0" data-slug-hash="gxRWQv" data-default-tab="html" data-user="rohanpaul" data-embed-version="2" data-pen-title="gxRWQv" class="codepen">See the Pen <a href="https://codepen.io/rohanpaul/pen/gxRWQv/">gxRWQv</a> by Rohan Paul (<a href="https://codepen.io/rohanpaul">@rohanpaul</a>) on <a href="https://codepen.io">CodePen</a>.</p>
 <script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
 
 
-In the above, we have a ``<div>`` called ``'root'`` and see below ./index.js will mount the ``App`` component into the ``root`` ``<div>``
+In the above, we have a ``<div>`` called ``'root'`` and as we can see below the ``src/index.js`` will mount the ``App`` component into the ``root`` ``<div>``
 
 
 <p data-height="265" data-theme-id="0" data-slug-hash="BdZRxx" data-default-tab="js" data-user="rohanpaul" data-embed-version="2" data-pen-title="BdZRxx" class="codepen">See the Pen <a href="https://codepen.io/rohanpaul/pen/BdZRxx/">BdZRxx</a> by Rohan Paul (<a href="https://codepen.io/rohanpaul">@rohanpaul</a>) on <a href="https://codepen.io">CodePen</a>.</p>
 <script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
 
 
-[create-react-app cli](https://github.com/facebookincubator/create-react-app) has a quite exhaustive docuementation. The underpinnings of Create React App are housed in the ``react-scripts`` package. This package contains scripts for the building, testing, starting the app. The [bin script](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/bin/react-scripts.js) is responsible for calling the respective scripts. When we do an ``npm install`` in the root folder of our application, npm creates a symlink in the ``node_modules/.bin`` folder to the react-script.js so that it can be directly used from the CLI.
+[create-react-app cli](https://github.com/facebookincubator/create-react-app) has a quite exhaustive docuementation. The underpinnings of Create React App are housed in the ``react-scripts`` package. This package contains scripts for building, testing and starting the app. The [bin script](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/bin/react-scripts.js) is responsible for calling the respective scripts. When we do an ``npm install`` in the root folder of our application, npm creates a symlink in the ``node_modules/.bin`` folder to the [react-script.js](https://github.com/facebook/create-react-app/blob/next/packages/react-scripts/bin/react-scripts.js) so that it can be directly used from the CLI.
 
 There are four default commands bundled into create-react-app: ``start``, ``build``, ``test``, and ``eject``. Also, notice that create-react-app now uses Yarn by default instead of just standard NPM. Lets understand them a little bit more
 
 **``npm run build`` or ``yarn build``**
 
- Basically, this means it’s going to take all of the Javascript code that the browser can’t interpret without any help and turn it into a smaller (“minified”) version that the browser can read and understand. It shrinks the file down as much as it possibly can to reduce the download time and builds the app for production by creating a build directory. This directory will contain the bundled js file and the index.html file. However, I can't just open the index.html in my browser to render the app. Because, it is supposed to be served with a static file server, as most React apps use client-side routing, and we can’t do that with file:// URLs.
+ Basically, what it does is, it’s going to take all of the Javascript code that the browser can’t interpret without any help and turn it into a smaller (“minified”) version that the browser can read and understand. It shrinks the file down as much as it possibly can to reduce the download time and builds the app for production by creating a build directory. This directory will contain the bundled .js file and the index.html file. However, I can't just open the index.html in my browser to render the app. Because, it is supposed to be served with a static file server, as most React apps use client-side routing, and we can’t do that with file:// URLs.
 
 
 **``npm test`` or ``yarn test``**
@@ -66,7 +66,7 @@ After ejection there will be additional scripts and config directory and ~10 new
 
 **Changing the development server port**
 
-By default the app will open in port 300. To change it, create a file called .env in the root of your project and specify port number there. Like
+By default the app will open in port 3000. To change it, create a file called .env in the root of your project and specify port number there. Like
 
 ```PORT=3005```
 
