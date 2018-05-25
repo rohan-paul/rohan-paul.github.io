@@ -7,30 +7,29 @@ categories: JavaScript
 ---
 <img src="/images/fulls/React-Component.jpeg" class="fit image">
 
-Components are the heart and soul of React. Most simpley component is just a function that accept some properties and return a UI element.
+Components are the heart and soul of React. Most simply component is just a function that accept some properties and return a UI element.
 
 ```
 function Computer(props) {
 	return (
-	<<div>A Powerful machine</div>
+	<div>A Powerful machine</div>
 	);
 }
 ```
 
-Components take raw data and render it as HTML in the DOM. It describes what to render. They utilize properties (props for short) and states which contribute to this raw data. Both props and states are plain Javascript objects, any changes to them trigger a render update and they are deterministic.
+Components take raw data and render it as HTML in the DOM. It describes what to render. They utilize properties (props for short) and states which contribute to this raw data. Both props and states are plain Javascript objects.
 
 Components have one requirement; they must implement ``render``, a function that tells the component what to render. 
 
 **There are three ways to create a component.**
 
-React traditionally provided the **``React.createClass`` method to create component classes**, and then using ES6 syntax with **``extends React.Component``**, which extends the Component class instead of calling ``React.createClass``. And the third way, is applicable for creating the React Stateless Functional Components that we will discuss below. Lets look at them one by one starting with **``React.createClass``**
+**A)** React traditionally provided the React.createClass method to create component classes (its deprecated now). 
 
+**B)** Using the ES6 syntax with extends React.Component, which extends the Component class instead of calling React.createClass. 
 
+**C)** And the third way, is creating the React Stateless Functional Components.
 
-<p data-height="415" data-theme-id="0" data-slug-hash="PKWdEJ" data-default-tab="js" data-user="rohanpaul" data-embed-version="2" data-pen-title="firstReactComponent" class="codepen">See the Pen <a href="https://codepen.io/rohanpaul/pen/PKWdEJ/">firstReactComponent</a> by Rohan Paul (<a href="https://codepen.io/rohanpaul">@rohanpaul</a>) on <a href="https://codepen.io">CodePen</a>.</p>
-<script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
-
-**And now create the same component class ES6 way as below:**
+**Create a component class ES6 way**
 
 
 <p data-height="362" data-theme-id="0" data-slug-hash="xLgmaw" data-default-tab="js" data-user="rohanpaul" data-embed-version="2" data-pen-title="Create_React_Component-ES6Way" class="codepen">See the Pen <a href="https://codepen.io/rohanpaul/pen/xLgmaw/">Create_React_Component-ES6Way</a> by Rohan Paul (<a href="https://codepen.io/rohanpaul">@rohanpaul</a>) on <a href="https://codepen.io">CodePen</a>.</p>
@@ -73,7 +72,7 @@ This pattern is similar to the "traditional" one, except for the fact that we're
 
 A functional component is just a function. It's not a class. As such, there's no global ``this`` object. This means that when we're doing a ``render`` we're basically creating a new instance of a ``ReactComponent``, thus leaving out the possibility for these javascript objects to communicate with each other via some global ``this``. This also makes the use of state and any life-cycle methods impossible as a consequence.
 
-Generally, using the new pattern is recommended whenever possible! If we only need a ``render`` method, but no life-cycle methods or state, use this pattern.
+Generally, using the new pattern is recommended whenever possible! If we only need a ``render`` method, but no life-cycle methods or state, use this functional pattern.
 
 
 **Properties**
@@ -88,11 +87,11 @@ Per React's [Thinking in React](https://facebook.github.io/react/docs/thinking-i
 <script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
 
 
-So what's happening here? First, notice that we have two separate components <Parent /> and <TacosList />. In this example, we want to pass our data from <Parent /> to <TacosList /> using props. The data we want to pass from our parent to our child is a short list of taco names (the array assigned to the tacos property on our <Parent /> component).
+So what's happening here? First, notice that we have two separate components <Parent /> and <TacosList />. In this example, we want to pass data from Parent component to child (TacosList) component using props. The data we want to pass from our parent to our child is a short list of tacos names (the array assigned to the tacos property on our <Parent /> component).
 
-To pass them to the child, we define a property on that child component where that data will be passed through. In this case, we define a property or "prop" in React-slang called tacos on the <TacosList /> component. Next, using the JSX braces syntax for specifying JavaScript code within our markup, we grab our array of tacos from the parent by calling this.tacos. Here, we're literraly saying to the <TacosList /> component, "here's a list of tacos, go nuts."
+To pass them to the child, we define a property on that child component where that data will be passed through. In this case, we define a property or "prop" in React-terminology called tacos on the <TacosList /> component. Next, using the JSX curly braces syntax for specifying JavaScript code within our markup, we grab our array of tacos from the parent by calling ``this.tacos``. Here, we're literraly saying to the <TacosList /> component, "here's a list of tacos, go nuts."
 
-Realize: our <TacosList /> component could care less about what data it's getting as long as 1.) that data is passed through a prop called tacos and the type of data is an Array. We could just as easily pass it a list of candy and it would work fine. If we look at the definition of our <TacosList /> component, we can see how this works.
+Realize: our <TacosList /> component could'nt care less about what data it's getting as long as 1.) that data is passed through a prop called tacos and the type of data is an Array. If we look at the definition of our <TacosList /> component, we can see how this works.
 
 Like we'd expect, we're pulling in our array of tacos from the <Parent /> component by calling to this.props.tacos from within our <TacosList /> (or child) component. This resolves the first requirement. Next, we call .map() on this value to iterate over it, meaning, we expect the value to be an array.
 
@@ -102,8 +101,6 @@ From there, we assign a variable in our map's arguments to reference each value 
 **States**
 
 The state is a data structure that starts with a default value when a Component mounts. It may be mutated across time, mostly as a result of user events. A Component manages its own state internally. Besides setting an initial state, it has no business fiddling with the state of its children. You might conceptualize state as private to that component. For example, the user clicks a button, types in an input field, or receives new data from a WebSocket server. These events would update a property in the component's ``state`` by calling ``setState()``, and the update is ``render``ed in HTML.
-
-Both props and state changes trigger a render update.
 
 
 **Difference between Props and States**
@@ -134,7 +131,7 @@ class HelloWorld extends React.Component {
 }
 ```
 
-To have a smaller syntax for stateless components, React provides us with a function style. We create a function that takes properties as an argument and returns the view. Reqriting the HelloWorld component as a function that returns <h1> would be:
+To have a smaller syntax for stateless components, React provides us with a function style. We create a function that takes properties as an argument and returns the view. Requiriing the HelloWorld component as a function that returns <h1> would be:
 
 ```
 const HelloWorld = function(props){
