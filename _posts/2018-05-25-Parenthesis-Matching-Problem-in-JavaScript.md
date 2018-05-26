@@ -9,9 +9,28 @@ categories: JavaScript
 <img src="/images/fulls/Parenthesis-Matching.jpg" class="fit image">
 
 
-A classic problem — Write a **balancedParens** function that takes a string as input and returns a boolean — if the parentheses in the input string are ‘balanced’, then return true, else return false.
+A classic problem - Check for **balanced parentheses** in an expression. Two brackets are considered to be a matched pair if the an opening bracket (i.e., (, [, or { ) occurs to the left of a closing bracket (i.e., ), ], or }) of the exact same type. There are three types of matched pairs of brackets: [], {}, and ().
 
-Here’s my simple implementation with stack data structure.
+Write a balancedParenthesis function that takes a string as input and returns a boolean - if the parentheses in the input string are 'balanced', then return true, else return false. For example, the program should print true for exp = "[()]{}{[()()]()}" and false for exp = "[(])"
+
+Algorithm
+
+Declare a character stack.
+
+Now traverse the expression string exp.
+
+If the current character is a starting bracket (‘(‘ or ‘{‘ or ‘[‘) then push it to stack.
+
+If the current character is a closing bracket (‘)’ or ‘}’ or ‘]’) then pop from stack and if the popped character is the matching starting bracket then fine else parenthesis are not balanced.
+
+After complete traversal, if there is some starting bracket left in stack then “not balanced”
+
+Here’s the implementation..
+
+<script src="https://gist.github.com/rohan-paul/c0b737d483135fbbbdac85339240a56f.js"></script>
+
+
+Here’s another simple implementation with stack data structure.
 
 
 <script src="https://gist.github.com/rohan-paul/b196a23b71e2c2474134df907f29357c.js"></script>
