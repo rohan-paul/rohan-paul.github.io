@@ -107,7 +107,7 @@ G> And ``a`` will only take values upto ``(nums.length - 3)`` as the last 2 valu
 
 And see the huge performance difference with the 3 approaches to soution, running the code for an array with 2000 randomly generated elements.
 
-```
+```js
 var arr = Array.from({length: 2000}, () => Math.floor(Math.random() * 3000));
 
 console.time("Solution-1-Brute Force");

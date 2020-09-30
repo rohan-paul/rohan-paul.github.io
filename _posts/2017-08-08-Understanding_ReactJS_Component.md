@@ -147,7 +147,7 @@ const HelloWorld = (props)=>{
 ```
 
 
-**Stateful Component** -  Both props and state. These are used when your component must retain some state. This is a good place for client-server communication (XHR, web sockets, etc.), processing data and responding to user events. These sort of logistics should be encapsulated in a moderate number of Stateful Components, while all visualization and formatting logic should move downstream into many Stateless Components.
+**Stateful Component** -  These are used when your component must retain some state. This is a good place for client-server communication (XHR, web sockets, etc.), processing data and responding to user events. These sort of logistics should be encapsulated in a moderate number of Stateful Components, while all visualization and formatting logic should move downstream into many Stateless Components.
 
 | | _props_ | _state_ | 
 --- | --- | --- 
@@ -161,7 +161,7 @@ Can change in child Components? | Yes | No
 
 It is often desirable to divide components based on their primary responsibility, into Presentational and Container components.
 Presentational components are concerned only with displaying data - they can be regarded as, and are often implemented as, functions that convert a model to a view. Typically they do not maintain any internal state. 
-Container components are concerned with managing data. This may be done internally through their own state, or by acting as intermediaries with a state-management library such as Redux. Initialization of the state and update of the state are handled in container component. The container component will not directly display data, rather it will pass the data to a presentational component.
+Container components are concerned with managing data. This may be done internally through their own state, or by acting as intermediaries with a state-management library such as Redux. Initialization of the state and update of the state are handled in container component.
 
 **Setting the initial state**
 

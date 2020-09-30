@@ -73,8 +73,13 @@ By default the app will open in port 3000. To change it, create a file called .e
 And this is the [source code](https://github.com/facebookincubator/create-react-app/blob/10c1f577da211d65bcc278f94198ef75f00f0277/packages/react-scripts/scripts/start.js#L53) if you are interested.
 
 
+
 <p data-height="138" data-theme-id="0" data-slug-hash="brRojj" data-default-tab="js" data-user="rohanpaul" data-embed-version="2" data-pen-title="brRojj" class="codepen">See the Pen <a href="https://codepen.io/rohanpaul/pen/brRojj/">brRojj</a> by Rohan Paul (<a href="https://codepen.io/rohanpaul">@rohanpaul</a>) on <a href="https://codepen.io">CodePen</a>.</p>
 <script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
+
+Or to start the server with a different port number pass the command like below
+
+``PORT=3001 yarn start``
 
 
 Let’s have a deep dive inside the source code by looking at the ./node_modules/react-scripts/scripts directory and [The build.js function](https://github.com/facebookincubator/create-react-app/blob/10c1f577da211d65bcc278f94198ef75f00f0277/packages/react-scripts/scripts/build.js#L114)
