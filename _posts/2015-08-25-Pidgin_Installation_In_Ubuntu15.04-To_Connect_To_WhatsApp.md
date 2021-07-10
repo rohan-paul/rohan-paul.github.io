@@ -35,7 +35,7 @@ You may actually choose to skip installing the full GNOME Desktop development at
 
 So if you have downloaded Pidgin source (the .tar.bz2 file) into ~/Downloads/Pidgin-Source
 
-``$ cd ~/Downloads/Pidgin-Source``     
+``$ cd ~/Downloads/Pidgin-Source``
 
 ``$ tar xjvf pidgin-2.10.11.tar.bz2``
 

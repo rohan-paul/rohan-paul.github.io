@@ -1,9 +1,11 @@
 ---
+layout: post
 title: Understanding Proxy — Metaprogramming in JavaScript
 description: >-
   8th week running @ The Hacking School and one of the thing we are learning
   this week is metaprograming, and Proxy is a major concept within…
-date: "2018-05-31T10:18:24.831Z"
+comments: true
+author: Rohan Paul
 categories: []
 keywords: []
 slug: /@paulrohan/understanding-proxy-metaprogramming-in-javascript-b1c727b747f2
