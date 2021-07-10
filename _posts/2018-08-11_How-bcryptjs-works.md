@@ -5,7 +5,7 @@ comments: true
 author: Rohan Paul
 categories: []
 keywords: []
-slug: /@paulrohan/understanding-proxy-metaprogramming-in-javascript-b1c727b747f2
+slug: /@paulrohan/How-bcryptjs-works
 ---
 
 # How bcryptjs works
