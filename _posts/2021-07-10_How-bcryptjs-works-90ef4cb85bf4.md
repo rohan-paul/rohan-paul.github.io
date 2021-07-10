@@ -7,7 +7,7 @@ comments: true
 author: Rohan Paul
 categories: []
 keywords: []
-slug: /@paulrohan/how-bcryptjs-works
+slug: /@paulrohan/how-bcryptjs-works-90ef4cb85bf4
 ---
 
 
