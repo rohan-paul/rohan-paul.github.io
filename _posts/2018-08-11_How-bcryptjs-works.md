@@ -1,3 +1,13 @@
+---
+layout: post
+title: How bcryptjs works
+comments: true
+author: Rohan Paul
+categories: []
+keywords: []
+slug: /@paulrohan/understanding-proxy-metaprogramming-in-javascript-b1c727b747f2
+---
+
 # How bcryptjs works
 
 Using bcrypt is a secured way to store passwords in my database regardless of whatever language my app’s backend is built in — PHP, Ruby…
