@@ -1,6 +1,8 @@
 ---
 layout: post
 title: How bcryptjs works
+description: >-
+  bcryptjs for encrypting your password
 comments: true
 author: Rohan Paul
 categories: []
