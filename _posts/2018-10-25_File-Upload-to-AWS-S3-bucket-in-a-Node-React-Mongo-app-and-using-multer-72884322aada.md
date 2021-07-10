@@ -1,3 +1,17 @@
+---
+layout: post
+title: GIT
+description: >-
+  8th week running @ The Hacking School and one of the thing we are learning
+  this week is metaprograming, and Proxy is a major concept within…
+comments: true
+author: Rohan Paul
+categories: []
+keywords: []
+slug: /@paulrohan/git
+---
+
+
 # File Upload to AWS S3 bucket in a Node-React-Mongo app and using multer
 
 Full Source code of the final working app (both the front and backend) —…
@@ -20,7 +34,7 @@ This quick tutorial will get you started using Amazon AWS by building an app wit
 
 For creating the S3 bucket follow their official quick-start guide, its really fast and simple (assuming I have a fully acitvated AWS account setup before).
 
-[**Step 1: Create an Amazon S3 Bucket - AWS Quick Start Guide: Back Up Your Files to Amazon Simple…**  
+[**Step 1: Create an Amazon S3 Bucket - AWS Quick Start Guide: Back Up Your Files to Amazon Simple…**
 _First, you need to create an Amazon S3 bucket where you will store your objects._docs.aws.amazon.com](https://docs.aws.amazon.com/quickstarts/latest/s3backup/step-1-create-bucket.html "https://docs.aws.amazon.com/quickstarts/latest/s3backup/step-1-create-bucket.html")[](https://docs.aws.amazon.com/quickstarts/latest/s3backup/step-1-create-bucket.html)
 
 In this write-up I am not going through each of the steps and file details like installing all the extra packages or setting up the server configuration in my app.js file, because I am given above the final link for the source code.
@@ -122,13 +136,13 @@ I can test the upload API from Postman by selecting **_\`_**[**_http://localhost
 
 And I will get back a 200 OK response of the below form-data
 
-{  
-“data”: {  
-“ETag”: “a number”,  
-“Location”: “full link of the file”,  
-“key”: “original file name of the file that I uploaded”,  
-“Key”: “original file name of the file that I uploaded”,  
-“Bucket”: “my AWS s3 bucket name”  
+{
+“data”: {
+“ETag”: “a number”,
+“Location”: “full link of the file”,
+“key”: “original file name of the file that I uploaded”,
+“Key”: “original file name of the file that I uploaded”,
+“Bucket”: “my AWS s3 bucket name”
 }
 
 #### [To display the uploaded file when I click on “view-file” link in the front-end](https://stackoverflow.com/questions/32702431/display-images-fetched-from-s3)

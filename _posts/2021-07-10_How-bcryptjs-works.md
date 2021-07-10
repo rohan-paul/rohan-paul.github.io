@@ -7,9 +7,8 @@ comments: true
 author: Rohan Paul
 categories: []
 keywords: []
-slug: /@paulrohan/how-bcryptjs-works-90ef4cb85bf4
+slug: /@paulrohan/how-bcryptjs-works
 ---
-
 
 ![](https://cdn-images-1.medium.com/max/800/1*cYPdg0MnTsOI_0kM5V4zXg.jpeg)
 
@@ -18,8 +17,6 @@ slug: /@paulrohan/how-bcryptjs-works-90ef4cb85bf4
 Using bcrypt is a secured way to store passwords in my database regardless of whatever language my app’s backend is built in — PHP, Ruby…
 
 Learn how to use bcryptjs for a secured way of storing passwords in any database.
-
-
 
 
 #### Using **bcrypt** is a secured way to store passwords in my database regardless of whatever language my app’s backend is built in — PHP, Ruby, Python, Node.js, etc.
